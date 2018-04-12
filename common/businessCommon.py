@@ -30,7 +30,7 @@ def login():
 
     # login
     response = localConfigHttp.post().json()
-    token = utils.get_value_from_return_json(response, "member", "token")
+    token = utils.get_value(response, "member", "token")
     return token
 
 

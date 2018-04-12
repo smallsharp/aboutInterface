@@ -1,5 +1,5 @@
 import os
-import mParseIni
+import mParser
 import logging
 from datetime import datetime
 import threading
@@ -11,7 +11,7 @@ class Log:
 
     def __init__(self):
         global logPath, resultPath, proDir
-        proDir = mParseIni.proDir
+        proDir = mParser.proDir
         resultPath = os.path.join(proDir, "result")
         # 如果没有result目录，测创建一个
         if not os.path.exists(resultPath):

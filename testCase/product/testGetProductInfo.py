@@ -91,7 +91,7 @@ class ProductInfo(unittest.TestCase):
         if self.result == '0':
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
-            goods_id = utils.get_value_from_return_json(self.info, "Product", "goods_id")
+            goods_id = utils.get_value(self.info, "Product", "goods_id")
             self.assertEqual(goods_id, self.goodsId)
         if self.result == '1':
             self.assertEqual(self.info['code'], self.info['code'])

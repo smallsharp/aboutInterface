@@ -100,7 +100,7 @@ class GetAddress(unittest.TestCase):
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             self.assertIsNotNone(self.info['info']['address'])
-            value = utils.get_value_from_return_json(self.info, "address", "addressId")
+            value = utils.get_value(self.info, "address", "addressId")
             self.assertEqual(value, self.address_id)
 
         if self.result == '1':

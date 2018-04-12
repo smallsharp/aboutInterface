@@ -7,12 +7,12 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from datetime import datetime
 import threading
-import mParseIni
+import mParser
 from common.Log import MyLog
 import zipfile
 import glob
 
-config = mParseIni.ReadConfig()
+config = mParser.ReadConfig()
 
 
 class Email:
@@ -55,7 +55,7 @@ class Email:
         write the content of email
         :return:
         """
-        f = open(os.path.join(mParseIni.proDir, 'testFile', 'emailStyle.txt'))
+        f = open(os.path.join(mParser.proDir, 'testFile', 'emailStyle.txt'))
         content = f.read()
         f.close()
         content_plain = MIMEText(content, 'html', 'UTF-8')
@@ -68,7 +68,7 @@ class Email:
         :return:
         """
         # defined image path
-        image1_path = os.path.join(mParseIni.proDir, 'testFile', 'img', '1.png')
+        image1_path = os.path.join(mParser.proDir, 'testFile', 'img', '1.png')
         fp1 = open(image1_path, 'rb')
         msgImage1 = MIMEImage(fp1.read())
         # self.msg.attach(msgImage1)
@@ -78,7 +78,7 @@ class Email:
         msgImage1.add_header('Content-ID', '<image1>')
         self.msg.attach(msgImage1)
 
-        image2_path = os.path.join(mParseIni.proDir, 'testFile', 'img', 'logo.jpg')
+        image2_path = os.path.join(mParser.proDir, 'testFile', 'img', 'logo.jpg')
         fp2 = open(image2_path, 'rb')
         msgImage2 = MIMEImage(fp2.read())
         # self.msg.attach(msgImage2)
@@ -98,7 +98,7 @@ class Email:
         if self.check_file():
 
             reportpath = self.log.get_result_path()
-            zippath = os.path.join(mParseIni.proDir, "result", "test.zip")
+            zippath = os.path.join(mParser.proDir, "result", "test.zip")
 
             # zip file
             files = glob.glob(reportpath + '\*')

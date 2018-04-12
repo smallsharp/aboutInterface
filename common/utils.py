@@ -1,5 +1,5 @@
 import requests
-import mParseIni
+import mParser
 import os
 from xlrd import open_workbook
 from xml.etree import ElementTree
@@ -7,8 +7,8 @@ from common.mHttp import MyHttp
 from common.Log import MyLog as Log
 import json
 
-localReadConfig = mParseIni.ReadConfig()
-proDir = mParseIni.proDir
+localReadConfig = mParser.ReadConfig()
+proDir = mParser.proDir
 localConfigHttp = MyHttp()
 log = Log.get_log()
 logger = log.get_logger()
@@ -38,7 +38,7 @@ def set_visitor_token_to_config():
     localReadConfig.set_headers("TOKEN_V", token_v)
 
 
-def get_value_from_return_json(json, name1, name2):
+def get_value(json, name1, name2):
     """
     get value by key
     :param json:

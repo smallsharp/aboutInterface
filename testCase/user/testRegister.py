@@ -103,7 +103,7 @@ class Register(unittest.TestCase):
         utils.show_return_msg(self.response)
         if self.result == '0':
             # get register email
-            email = utils.get_value_from_return_json(self.info, 'member', 'email')
+            email = utils.get_value(self.info, 'member', 'email')
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             self.assertEqual(email, self.email)

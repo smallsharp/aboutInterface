@@ -1,12 +1,12 @@
 import unittest
 import paramunittest
-import mParseIni
+import mParser
 from common import Log as Log
 from common import utils
 from common import mHttp as ConfigHttp
 
 login_xls = utils.get_xls("userCase.xlsx", "login")
-config = mParseIni.ReadConfig()
+config = mParser.ReadConfig()
 configHttp = ConfigHttp.MyHttp()
 info = {}
 
@@ -84,7 +84,7 @@ class Login(unittest.TestCase):
         info = self.info
         if info['code'] == 0:
             # get uer token
-            token_u = utils.get_value_from_return_json(info, 'member', 'token')
+            token_u = utils.get_value(info, 'member', 'token')
             # set user token to config file
             config.set_headers("TOKEN_U", token_u)
         else:
@@ -101,7 +101,7 @@ class Login(unittest.TestCase):
         utils.show_return_msg(self.return_json)
 
         if self.result == '0':
-            email = utils.get_value_from_return_json(self.info, 'member', 'email')
+            email = utils.get_value(self.info, 'member', 'email')
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             self.assertEqual(email, self.email)

@@ -9,14 +9,6 @@ class ReadConfig:
 
     def __init__(self):
         fd = open(iniPath)
-        # data = fd.read()
-        #  remove BOM
-        # if data[:3] == codecs.BOM_UTF8:
-        #     data = data[3:]
-        #     file = codecs.open(iniPath, "w")
-        #     file.write(data)
-        #     file.close()
-        # fd.close()
         self.parser = configparser.ConfigParser()
         self.parser.read(iniPath)
 
@@ -45,11 +37,21 @@ class ReadConfig:
         value = self.parser.get("DATABASE", name)
         return value
 
+class MyIniParser:
+
+    def __init__(self,iniFilePath):
+
+        with open(iniFilePath,'r'):
+            self.parser = configparser.ConfigParser()
+            self.parser.read(iniFilePath)
+
+    def getItem(self,section,key):
+        return self.parser.get(section,key)
+
 
 if __name__ == '__main__':
+    project_dir = os.path.dirname(os.path.abspath(__file__))
+    print(project_dir)
 
-    print(proDir)
-    config = ReadConfig()
-    print(config.get_email('mail_host'))
-    # print(config.parser.get('EMAIL', 'mail_host'))
-    # print(os.path.realpath(__file__))
+    p = MyIniParser('config.ini')
+    print(p.getItem('EMAIL', 'mail_host'))

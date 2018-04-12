@@ -1,23 +1,21 @@
-#coding=utf-8
-"""
-@Time:2018-04-1111:58
-@Author:lfl5207
-"""
 import unittest
-caseList=[]
+from parameterized import parameterized, param
 
-def set_case_list():
-    fb = open('caselist.txt')
-    for value in fb.readlines():
-        data = str(value)
-        print("data:", data)
-        if data != '' and not data.startswith("#"):
-            # caseList.append(data.replace("\n", ""))
-            caseList.append(data)
-    fb.close()
+# A list of tuples
+@parameterized([
+    (2, 3, 5),
+    (3, 5, 8),
+])
+def test_add(a, b, expected):
+    # assert_equal(a + b, expected)
+    print(a,b,expected)
+# A list of params
+@parameterized([
+    param("10", 10),
+    param("10", 16, base=16),
+])
+def test_int(str_val, expected, base=10):
+    pass
 
-# set_case_list()
-# print(caseList)
-
-
-print(dir(unittest))
+if __name__ == '__main__':
+    unittest.main()

@@ -1,5 +1,5 @@
 import requests
-import mParseIni
+import mParser
 from common.Log import MyLog as Log
 import json
 
@@ -11,7 +11,7 @@ class MyHttp:
     def __init__(self):
 
         global scheme, host, port, timeout
-        self.config = mParseIni.ReadConfig()
+        self.config = mParser.ReadConfig()
         scheme = self.config.get_http("scheme")
         host = self.config.get_http("baseurl")
         port = self.config.get_http("port")

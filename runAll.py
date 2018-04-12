@@ -2,11 +2,11 @@
 import os
 import unittest
 from common.Log import MyLog as Log
-import mParseIni
+import mParser
 from common import HTMLTestReportCN
 from common.configEmail import MyEmail
 
-iniParser = mParseIni.ReadConfig()
+iniParser = mParser.ReadConfig()
 
 class AllTest:
 
@@ -17,9 +17,9 @@ class AllTest:
         resultPath = log.get_report_path()
         on_off = iniParser.get_email("on_off")
         # D:\workspace\PythonStation\interfaceTest\caselist.txt
-        self.caseFile = os.path.join(mParseIni.proDir,"caselist.txt")
+        self.caseFile = os.path.join(mParser.proDir, "caselist.txt")
         self.caseList = self.getCaseList()  # ['user/testLogin', 'user/testRegister']
-        self.caseDir = os.path.join(mParseIni.proDir, "testCase")  # D:\workspace\PythonStation\interfaceTest\testCase
+        self.caseDir = os.path.join(mParser.proDir, "testCase")  # D:\workspace\PythonStation\interfaceTest\testCase
         self.email = MyEmail.get_email()
 
     def getCaseList(self):
