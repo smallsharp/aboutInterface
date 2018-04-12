@@ -1,19 +1,21 @@
 import requests
-import readConfig as readConfig
+import mParseIni
 from common.Log import MyLog as Log
 import json
 
-localReadConfig = readConfig.ReadConfig()
+# config = mParseIni.ReadConfig()
 
 
-class ConfigHttp:
+class MyHttp:
 
     def __init__(self):
+
         global scheme, host, port, timeout
-        scheme = localReadConfig.get_http("scheme")
-        host = localReadConfig.get_http("baseurl")
-        port = localReadConfig.get_http("port")
-        timeout = localReadConfig.get_http("timeout")
+        self.config = mParseIni.ReadConfig()
+        scheme = self.config.get_http("scheme")
+        host = self.config.get_http("baseurl")
+        port = self.config.get_http("port")
+        timeout = self.config.get_http("timeout")
         self.log = Log.get_log()
         self.logger = self.log.get_logger()
         self.headers = {}
@@ -23,13 +25,14 @@ class ConfigHttp:
         self.files = {}
         self.state = 0
 
-    def set_url(self, url):
+    def set_url(self, uri):
         """
         set url
         :param: interface url
         :return:
         """
-        self.url = scheme + '://' + host + url
+        self.url = scheme + '://' + host + uri
+        print('url:',self.url)
 
     def set_headers(self, header):
         """
@@ -82,18 +85,11 @@ class ConfigHttp:
             self.logger.error("Time out!")
             return None
 
-    # defined http post method
-    # include get params and post data
-    # uninclude upload file
+
     def post(self):
-        """
-        defined post method
-        :return:
-        """
         try:
             response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data,
                                      timeout=float(timeout))
-            # response.raise_for_status()
             return response
         except TimeoutError:
             self.logger.error("Time out!")

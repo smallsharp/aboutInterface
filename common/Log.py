@@ -4,25 +4,30 @@ import logging
 from datetime import datetime
 import threading
 
-localReadConfig = mParseIni.ReadConfig()
+# localReadConfig = mParseIni.ReadConfig()
 
+# https://segmentfault.com/a/1190000007581128
 class Log:
+
     def __init__(self):
         global logPath, resultPath, proDir
         proDir = mParseIni.proDir
         resultPath = os.path.join(proDir, "result")
+        # 如果没有result目录，测创建一个
         if not os.path.exists(resultPath):
             os.mkdir(resultPath)
         logPath = os.path.join(resultPath, str(datetime.now().strftime("%Y%m%d%H%M%S")))
         if not os.path.exists(logPath):
             os.mkdir(logPath)
         self.logger = logging.getLogger()
-        self.logger.setLevel(logging.INFO)
+        # 将日志的输出级别调整为DEBUG
+        self.logger.setLevel(logging.DEBUG)
 
         # defined handler
         handler = logging.FileHandler(os.path.join(logPath, "output.log"))
-        # defined formatter
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        # 输出格式 如：2018-04-12 16:32:56,934 - root - INFO - test info
+        # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
@@ -107,4 +112,5 @@ if __name__ == "__main__":
     logger = log.get_logger()
     logger.debug("test debug")
     logger.info("test info")
+    print('ok')
 

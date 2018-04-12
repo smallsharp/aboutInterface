@@ -7,27 +7,28 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from datetime import datetime
 import threading
-import readConfig as readConfig
+import mParseIni
 from common.Log import MyLog
 import zipfile
 import glob
 
-localReadConfig = readConfig.ReadConfig()
+config = mParseIni.ReadConfig()
 
 
 class Email:
     def __init__(self):
+
         global host, user, password, port, sender, title
-        host = localReadConfig.get_email("mail_host")
-        user = localReadConfig.get_email("mail_user")
-        password = localReadConfig.get_email("mail_pass")
-        port = localReadConfig.get_email("mail_port")
-        sender = localReadConfig.get_email("sender")
-        title = localReadConfig.get_email("subject")
+        host = config.get_email("mail_host")
+        user = config.get_email("mail_user")
+        password = config.get_email("mail_pass")
+        port = config.get_email("mail_port")
+        sender = config.get_email("sender")
+        title = config.get_email("subject")
         # content = localReadConfig.get_email("content")
 
         # get receiver list
-        self.value = localReadConfig.get_email("receiver")
+        self.value = config.get_email("receiver")
         self.receiver = []
         for n in str(self.value).split("/"):
             self.receiver.append(n)
@@ -54,7 +55,7 @@ class Email:
         write the content of email
         :return:
         """
-        f = open(os.path.join(readConfig.proDir, 'testFile', 'emailStyle.txt'))
+        f = open(os.path.join(mParseIni.proDir, 'testFile', 'emailStyle.txt'))
         content = f.read()
         f.close()
         content_plain = MIMEText(content, 'html', 'UTF-8')
@@ -67,7 +68,7 @@ class Email:
         :return:
         """
         # defined image path
-        image1_path = os.path.join(readConfig.proDir, 'testFile', 'img', '1.png')
+        image1_path = os.path.join(mParseIni.proDir, 'testFile', 'img', '1.png')
         fp1 = open(image1_path, 'rb')
         msgImage1 = MIMEImage(fp1.read())
         # self.msg.attach(msgImage1)
@@ -77,7 +78,7 @@ class Email:
         msgImage1.add_header('Content-ID', '<image1>')
         self.msg.attach(msgImage1)
 
-        image2_path = os.path.join(readConfig.proDir, 'testFile', 'img', 'logo.jpg')
+        image2_path = os.path.join(mParseIni.proDir, 'testFile', 'img', 'logo.jpg')
         fp2 = open(image2_path, 'rb')
         msgImage2 = MIMEImage(fp2.read())
         # self.msg.attach(msgImage2)
@@ -97,14 +98,14 @@ class Email:
         if self.check_file():
 
             reportpath = self.log.get_result_path()
-            zippath = os.path.join(readConfig.proDir, "result", "test.zip")
+            zippath = os.path.join(mParseIni.proDir, "result", "test.zip")
 
             # zip file
             files = glob.glob(reportpath + '\*')
             f = zipfile.ZipFile(zippath, 'w', zipfile.ZIP_DEFLATED)
             for file in files:
                 # 修改压缩文件的目录结构
-                f.write(file, '/report/'+os.path.basename(file))
+                f.write(file, '/report/' + os.path.basename(file))
             f.close()
 
             reportfile = open(zippath, 'rb').read()
@@ -152,7 +153,6 @@ class MyEmail:
 
     @staticmethod
     def get_email():
-
         if MyEmail.email is None:
             MyEmail.mutex.acquire()
             MyEmail.email = Email()

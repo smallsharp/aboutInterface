@@ -1,13 +1,13 @@
 import readConfig as readConfig
 from common.Log import MyLog
-from common import configHttp
-from common import common
+from common import mHttp
+from common import utils
 import unittest
 import paramunittest
 from common import configDB
 
-register_xls = common.get_xls("userCase.xlsx", "register")
-localConfigHttp = configHttp.ConfigHttp()
+register_xls = utils.get_xls("userCase.xlsx", "register")
+localConfigHttp = mHttp.MyHttp()
 localReadConfig = readConfig.ReadConfig()
 localConfigDB = configDB.MyDB()
 
@@ -62,7 +62,7 @@ class Register(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = common.get_url_from_xml('register')
+        self.url = utils.get_url_from_xml('register')
         localConfigHttp.set_url(self.url)
 
         # set header
@@ -100,10 +100,10 @@ class Register(unittest.TestCase):
         """
         self.info = self.response.json()
         # show return message
-        common.show_return_msg(self.response)
+        utils.show_return_msg(self.response)
         if self.result == '0':
             # get register email
-            email = common.get_value_from_return_json(self.info, 'member', 'email')
+            email = utils.get_value_from_return_json(self.info, 'member', 'email')
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             self.assertEqual(email, self.email)
@@ -113,6 +113,6 @@ class Register(unittest.TestCase):
             self.assertEqual(self.info['msg'], self.msg)
             if self.case_name == 'register_EmailExist':
                 # delete register user from db
-                sql = common.get_sql('newsitetest', 'rs_member', 'delete_user')
+                sql = utils.get_sql('newsitetest', 'rs_member', 'delete_user')
                 localConfigDB.executeSQL(sql, self.email)
                 localConfigDB.closeDB()

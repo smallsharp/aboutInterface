@@ -1,15 +1,15 @@
 import unittest
 import paramunittest
 import readConfig as readConfig
-from common import common
-from common import configHttp
+from common import utils
+from common import mHttp
 from common.Log import MyLog
 from common import businessCommon
 
 localReadConfig = readConfig.ReadConfig()
-localConfigHttp = configHttp.ConfigHttp()
-localLogin_xls = common.get_xls("userCase.xlsx", "login")
-localAccountSetting_xls = common.get_xls("userCase.xlsx", "accountSetting")
+localConfigHttp = mHttp.MyHttp()
+localLogin_xls = utils.get_xls("userCase.xlsx", "login")
+localAccountSetting_xls = utils.get_xls("userCase.xlsx", "accountSetting")
 
 
 @paramunittest.parametrized(*localAccountSetting_xls)
@@ -69,7 +69,7 @@ class AccountSetting(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = common.get_url_from_xml('accountSetting')
+        self.url = utils.get_url_from_xml('accountSetting')
         localConfigHttp.set_url(self.url)
 
         # set header
@@ -105,7 +105,7 @@ class AccountSetting(unittest.TestCase):
 
     def checkResult(self):
         self.info = self.response.json()
-        common.show_return_msg(self.response)
+        utils.show_return_msg(self.response)
 
         if self.result == '0':
             self.assertEqual(self.info['code'], self.code)

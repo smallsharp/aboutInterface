@@ -1,15 +1,15 @@
 import requests
-import readConfig as readConfig
+import mParseIni
 import os
 from xlrd import open_workbook
-from xml.etree import ElementTree as ElementTree
-from common import configHttp as configHttp
+from xml.etree import ElementTree
+from common.mHttp import MyHttp
 from common.Log import MyLog as Log
 import json
 
-localReadConfig = readConfig.ReadConfig()
-proDir = readConfig.proDir
-localConfigHttp = configHttp.ConfigHttp()
+localReadConfig = mParseIni.ReadConfig()
+proDir = mParseIni.proDir
+localConfigHttp = MyHttp()
 log = Log.get_log()
 logger = log.get_logger()
 
@@ -158,5 +158,7 @@ def get_url_from_xml(name):
     return url
 
 if __name__ == "__main__":
-    print(get_xls("login"))
-    set_visitor_token_to_config()
+    print(get_xls("userCase.xlsx","login"))
+
+    print(get_url_from_xml('login'))
+    # set_visitor_token_to_config()

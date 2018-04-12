@@ -2,13 +2,13 @@ import unittest
 import paramunittest
 import readConfig as readConfig
 from common import Log as Log
-from common import common
-from common import configHttp as ConfigHttp
+from common import utils
+from common import mHttp as ConfigHttp
 from common import businessCommon
 
-addAddress_xls = common.get_xls("userCase.xlsx", "addAddress")
+addAddress_xls = utils.get_xls("userCase.xlsx", "addAddress")
 localReadConfig = readConfig.ReadConfig()
-configHttp = ConfigHttp.ConfigHttp()
+configHttp = ConfigHttp.MyHttp()
 
 
 @paramunittest.parametrized(*addAddress_xls)
@@ -84,7 +84,7 @@ class AddAddress(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = common.get_url_from_xml('addAddress')
+        self.url = utils.get_url_from_xml('addAddress')
         configHttp.set_url(self.url)
 
         # get token
@@ -138,20 +138,20 @@ class AddAddress(unittest.TestCase):
         :return:
         """
         self.info = self.return_json.json()
-        common.show_return_msg(self.return_json)
+        utils.show_return_msg(self.return_json)
 
         if self.result == '0':
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'sex'), self.sex)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'fname'), self.fname)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'lname'), self.lname)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'tel'), self.tel)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'address1'), self.address1)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'city'), self.city)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'state'), self.state)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'postcode'), self.postcode)
-            self.assertEqual(common.get_value_from_return_json(self.info, 'address', 'countryId'), self.country_id)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'sex'), self.sex)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'fname'), self.fname)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'lname'), self.lname)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'tel'), self.tel)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'address1'), self.address1)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'city'), self.city)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'state'), self.state)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'postcode'), self.postcode)
+            self.assertEqual(utils.get_value_from_return_json(self.info, 'address', 'countryId'), self.country_id)
 
         if self.result == '1':
             self.assertEqual(self.info['code'], self.code)

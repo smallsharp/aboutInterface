@@ -3,7 +3,7 @@
 @Time:2018-04-1111:58
 @Author:lfl5207
 """
-
+import unittest
 caseList=[]
 
 def set_case_list():
@@ -16,6 +16,8 @@ def set_case_list():
             caseList.append(data)
     fb.close()
 
+# set_case_list()
+# print(caseList)
 
-set_case_list()
-print(caseList)
+
+print(dir(unittest))

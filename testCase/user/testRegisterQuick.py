@@ -2,13 +2,13 @@ import readConfig as readConfig
 import unittest
 import paramunittest
 from common.Log import MyLog
-from common import configHttp
-from common import common
+from common import mHttp
+from common import utils
 from common import configDB
 
-localRegisterQuick_xls = common.get_xls("userCase.xlsx", "registerquick")
+localRegisterQuick_xls = utils.get_xls("userCase.xlsx", "registerquick")
 localReadConfig = readConfig.ReadConfig()
-localConfigHttp = configHttp.ConfigHttp()
+localConfigHttp = mHttp.MyHttp()
 localConfigDB = configDB.MyDB()
 
 
@@ -58,7 +58,7 @@ class RegisterQuick(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = common.get_url_from_xml('registerQuick')
+        self.url = utils.get_url_from_xml('registerQuick')
         localConfigHttp.set_url(self.url)
 
         # set header
@@ -92,10 +92,10 @@ class RegisterQuick(unittest.TestCase):
         :return:
         """
         self.info = self.response.json()
-        common.show_return_msg(self.response)
+        utils.show_return_msg(self.response)
 
         if self.result == '0':
-            email = common.get_value_from_return_json(self.info, 'member', 'email')
+            email = utils.get_value_from_return_json(self.info, 'member', 'email')
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             self.assertEqual(email, self.email)
@@ -104,6 +104,6 @@ class RegisterQuick(unittest.TestCase):
             self.assertEqual(self.info['code'], self.code)
             self.assertEqual(self.info['msg'], self.msg)
             if self.case_name == 'registerQuick_EmailExist':
-                sql = common.get_sql('newsitetest', 'rs_member', 'delete_user')
+                sql = utils.get_sql('newsitetest', 'rs_member', 'delete_user')
                 localConfigDB.executeSQL(sql, self.email)
                 localConfigDB.closeDB()

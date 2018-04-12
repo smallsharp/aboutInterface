@@ -5,21 +5,18 @@ import configparser
 proDir = os.path.split(os.path.realpath(__file__))[0]
 iniPath = os.path.join(proDir, "config.ini")
 
-
 class ReadConfig:
 
     def __init__(self):
         fd = open(iniPath)
-        data = fd.read()
-
+        # data = fd.read()
         #  remove BOM
-        if data[:3] == codecs.BOM_UTF8:
-            data = data[3:]
-            file = codecs.open(iniPath, "w")
-            file.write(data)
-            file.close()
-        fd.close()
-
+        # if data[:3] == codecs.BOM_UTF8:
+        #     data = data[3:]
+        #     file = codecs.open(iniPath, "w")
+        #     file.write(data)
+        #     file.close()
+        # fd.close()
         self.parser = configparser.ConfigParser()
         self.parser.read(iniPath)
 
@@ -52,5 +49,7 @@ class ReadConfig:
 if __name__ == '__main__':
 
     print(proDir)
-    read = ReadConfig()
-    print(read.get_email('mail_host'))
+    config = ReadConfig()
+    print(config.get_email('mail_host'))
+    # print(config.parser.get('EMAIL', 'mail_host'))
+    # print(os.path.realpath(__file__))

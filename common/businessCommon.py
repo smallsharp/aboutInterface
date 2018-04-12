@@ -1,11 +1,11 @@
-from common import common
-from common import configHttp
+from common import utils
+from common import mHttp
 import readConfig as readConfig
 
 localReadConfig = readConfig.ReadConfig()
-localConfigHttp = configHttp.ConfigHttp()
-localLogin_xls = common.get_xls("userCase.xlsx", "login")
-localAddAddress_xls = common.get_xls("userCase.xlsx", "addAddress")
+localConfigHttp = mHttp.MyHttp()
+localLogin_xls = utils.get_xls("userCase.xlsx", "login")
+localAddAddress_xls = utils.get_xls("userCase.xlsx", "addAddress")
 
 
 # login
@@ -15,7 +15,7 @@ def login():
     :return: token
     """
     # set url
-    url = common.get_url_from_xml('login')
+    url = utils.get_url_from_xml('login')
     localConfigHttp.set_url(url)
 
     # set header
@@ -30,7 +30,7 @@ def login():
 
     # login
     response = localConfigHttp.post().json()
-    token = common.get_value_from_return_json(response, "member", "token")
+    token = utils.get_value_from_return_json(response, "member", "token")
     return token
 
 
@@ -42,7 +42,7 @@ def logout(token):
     :return:
     """
     # set url
-    url = common.get_url_from_xml('logout')
+    url = utils.get_url_from_xml('logout')
     localConfigHttp.set_url(url)
 
     # set header
