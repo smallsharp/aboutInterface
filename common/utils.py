@@ -4,15 +4,13 @@ import os
 from xlrd import open_workbook
 from xml.etree import ElementTree
 from common.mHttp import MyHttp
-from common.Log import MyLog as Log
+from common.mLog import MyLog as Log
 import json
 
-localReadConfig = mParser.ReadConfig()
 proDir = mParser.proDir
-localConfigHttp = MyHttp()
+mhttp = MyHttp()
 log = Log.get_log()
 logger = log.get_logger()
-
 caseNo = 0
 
 
@@ -21,7 +19,8 @@ def get_visitor_token():
     create a token for visitor
     :return:
     """
-    host = localReadConfig.get_http("BASEURL")
+    # host = config.get_http("BASEURL")
+    host = mParser.MyIniParser(mParser.configIni).getItem('HTTP','host')
     response = requests.get(host+"/v2/User/Token/generate")
     info = response.json()
     token = info.get("info")
@@ -35,7 +34,7 @@ def set_visitor_token_to_config():
     :return:
     """
     token_v = get_visitor_token()
-    localReadConfig.set_headers("TOKEN_V", token_v)
+    # config.set_headers("TOKEN_V", token_v)
 
 
 def get_value(json, name1, name2):

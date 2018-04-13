@@ -1,17 +1,19 @@
 import pymysql
-import readConfig as readConfig
-from common.Log import MyLog as Log
+from common.mLog import MyLog as Log
 
-localReadConfig = readConfig.ReadConfig()
-
+import mParser
 
 class MyDB:
+
     global host, username, password, port, database, config
-    host = localReadConfig.get_db("host")
-    username = localReadConfig.get_db("username")
-    password = localReadConfig.get_db("password")
-    port = localReadConfig.get_db("port")
-    database = localReadConfig.get_db("database")
+
+    iniParser = mParser.MyIniParser(mParser.configIni)
+    host = iniParser.getItem('DATABASE','host')
+    username = iniParser.getItem('DATABASE','username')
+    password = iniParser.getItem('DATABASE','password')
+    port = iniParser.getItem('DATABASE','port')
+    database = iniParser.getItem('DATABASE','database')
+
     config = {
         'host': str(host),
         'user': username,

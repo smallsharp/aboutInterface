@@ -1,9 +1,10 @@
 import unittest
 import paramunittest
 import mParser
-from common import Log as Log
+from common import mLog as Log
 from common import utils
 from common import mHttp as ConfigHttp
+import os
 
 login_xls = utils.get_xls("userCase.xlsx", "login")
 # ['login', 'get', 18521035133.0, 123456.0, '0', '220119', 'account or password error!']
@@ -11,7 +12,12 @@ login_xls = utils.get_xls("userCase.xlsx", "login")
 mhttp = ConfigHttp.MyHttp()
 log = Log.MyLog.get_log()
 logger = log.get_logger()
-iniParser = mParser.MyIniParser('../../interface.ini')
+
+
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
+iniParser = mParser.MyIniParser(PATH('../../interface.ini'))
 
 @paramunittest.parametrized(*login_xls)
 class Login(unittest.TestCase):
@@ -45,7 +51,6 @@ class Login(unittest.TestCase):
 
     def testLogin(self):
         print('test')
-        # self.url = utils.get_url_from_xml('login')
         # self.uri = '/memberSite/sso/loginJson'
         self.uri =iniParser.getItem('memberSite','login')
         print("第一步：设置url  " + self.uri)
@@ -104,8 +109,3 @@ class Login(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    import os
-    # project_dir = os.path.dirname(os.path.abspath(__file__))
-    # print(project_dir)
-    # iniParser = mParser.MyIniParser('../../interface.ini')
-    # print(iniParser.getItem('memberSite', 'login'))

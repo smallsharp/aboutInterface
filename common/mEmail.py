@@ -1,5 +1,4 @@
 # coding:utf-8
-
 import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -8,27 +7,27 @@ from email.mime.image import MIMEImage
 from datetime import datetime
 import threading
 import mParser
-from common.Log import MyLog
+from common.mLog import MyLog
 import zipfile
 import glob
 
-config = mParser.ReadConfig()
-
 
 class Email:
+
     def __init__(self):
 
-        global host, user, password, port, sender, title
-        host = config.get_email("mail_host")
-        user = config.get_email("mail_user")
-        password = config.get_email("mail_pass")
-        port = config.get_email("mail_port")
-        sender = config.get_email("sender")
-        title = config.get_email("subject")
-        # content = localReadConfig.get_email("content")
+        self.parser = mParser.MyIniParser(mParser.configIni)
 
-        # get receiver list
-        self.value = config.get_email("receiver")
+        global host, user, password, port, sender, title
+
+        host = self.parser.getItem('EMAIL','mail_host')
+        user = self.parser.getItem('EMAIL','mail_user')
+        password = self.parser.getItem('EMAIL','mail_pass')
+        port = self.parser.getItem('EMAIL','mail_port')
+        sender = self.parser.getItem('EMAIL','sender')
+        title = self.parser.getItem('EMAIL','subject')
+
+        self.value = self.parser.getItem('EMAIL','receiver')
         self.receiver = []
         for n in str(self.value).split("/"):
             self.receiver.append(n)
@@ -89,10 +88,6 @@ class Email:
         self.msg.attach(msgImage2)
 
     def config_file(self):
-        """
-        config email file
-        :return:
-        """
 
         # if the file content is not null, then config the email file
         if self.check_file():

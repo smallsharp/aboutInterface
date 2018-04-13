@@ -1,5 +1,5 @@
 import readConfig as readConfig
-from common.Log import MyLog
+from common.mLog import MyLog
 from common import mHttp
 from common import utils
 import unittest

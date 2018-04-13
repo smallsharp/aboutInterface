@@ -3,7 +3,7 @@ import paramunittest
 import readConfig as readConfig
 from common import utils
 from common import mHttp
-from common.Log import MyLog
+from common.mLog import MyLog
 from common import businessCommon
 
 localReadConfig = readConfig.ReadConfig()

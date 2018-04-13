@@ -4,15 +4,18 @@ import logging
 from datetime import datetime
 import threading
 
-# localReadConfig = mParseIni.ReadConfig()
-
 # https://segmentfault.com/a/1190000007581128
+
+
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
 class Log:
 
     def __init__(self):
         global logPath, resultPath, proDir
-        proDir = mParser.proDir
-        resultPath = os.path.join(proDir, "result")
+        # resultPath = os.path.join(proDir, "result")
+        resultPath = os.path.join(PATH('../result'))
         # 如果没有result目录，测创建一个
         if not os.path.exists(resultPath):
             os.mkdir(resultPath)
@@ -53,36 +56,16 @@ class Log:
         self.logger.info("--------" + case_no + " END--------")
 
     def build_case_line(self, case_name, code, msg):
-        """
-        write test case line
-        :param case_name:
-        :param code:
-        :param msg:
-        :return:
-        """
         self.logger.info(case_name+" - Code:"+code+" - msg:"+msg)
 
     def get_report_path(self):
-        """
-        get report file path
-        :return:
-        """
         report_path = os.path.join(logPath, "report.html")
         return report_path
 
     def get_result_path(self):
-        """
-        get test result path
-        :return:
-        """
         return logPath
 
     def write_result(self, result):
-        """
-
-        :param result:
-        :return:
-        """
         result_path = os.path.join(logPath, "report.txt")
         fb = open(result_path, "wb")
         try:

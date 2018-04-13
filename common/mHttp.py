@@ -1,21 +1,26 @@
 import requests
 import mParser
-from common.Log import MyLog as Log
-import json
+from common.mLog import MyLog as Log
+import os
 
-# config = mParseIni.ReadConfig()
 
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
+# config.ini配置文件的路径
+configIni = PATH('../config.ini')
 
 class MyHttp:
 
     def __init__(self):
 
         global scheme, host, port, timeout
-        self.config = mParser.ReadConfig()
-        scheme = self.config.get_http("scheme")
-        host = self.config.get_http("baseurl")
-        port = self.config.get_http("port")
-        timeout = self.config.get_http("timeout")
+        self.iniParser = mParser.MyIniParser(configIni)
+        scheme = self.iniParser.getItem('HTTP','scheme')
+        host = self.iniParser.getItem('HTTP','host')
+        port = self.iniParser.getItem('HTTP','port')
+        timeout = self.iniParser.getItem('HTTP','timeout')
+
         self.log = Log.get_log()
         self.logger = self.log.get_logger()
         self.headers = {}
@@ -26,44 +31,19 @@ class MyHttp:
         self.state = 0
 
     def set_url(self, uri):
-        """
-        set url
-        :param: interface url
-        :return:
-        """
         self.url = scheme + '://' + host + uri
         print('url:',self.url)
 
     def set_headers(self, header):
-        """
-        set headers
-        :param header:
-        :return:
-        """
         self.headers = header
 
     def set_params(self, param):
-        """
-        set params
-        :param param:
-        :return:
-        """
         self.params = param
 
     def set_data(self, data):
-        """
-        set data
-        :param data:
-        :return:
-        """
         self.data = data
 
     def set_files(self, filename):
-        """
-        set upload files
-        :param filename:
-        :return:
-        """
         if filename != '':
             file_path = 'F:/AppTest/Test/interfaceTest/testFile/img/' + filename
             self.files = {'file': open(file_path, 'rb')}
@@ -71,12 +51,7 @@ class MyHttp:
         if filename == '' or filename is None:
             self.state = 1
 
-    # defined http get method
     def get(self):
-        """
-        defined get method
-        :return:
-        """
         try:
             response = requests.get(self.url, headers=self.headers, params=self.params, timeout=float(timeout))
             # response.raise_for_status()
@@ -95,13 +70,7 @@ class MyHttp:
             self.logger.error("Time out!")
             return None
 
-    # defined http post method
-    # include upload file
     def postWithFile(self):
-        """
-        defined post method
-        :return:
-        """
         try:
             response = requests.post(self.url, headers=self.headers, data=self.data, files=self.files,
                                      timeout=float(timeout))
@@ -110,13 +79,7 @@ class MyHttp:
             self.logger.error("Time out!")
             return None
 
-    # defined http post method
-    # for json
     def postWithJson(self):
-        """
-        defined post method
-        :return:
-        """
         try:
             response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(timeout))
             return response
@@ -127,3 +90,5 @@ class MyHttp:
 
 if __name__ == "__main__":
     print("ConfigHTTP")
+    m = MyHttp()
+

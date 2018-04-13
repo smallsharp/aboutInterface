@@ -1,7 +1,7 @@
 import unittest
 import paramunittest
 import mParser
-from common import Log as Log
+from common import mLog as Log
 from common import utils
 from common import mHttp as ConfigHttp
 

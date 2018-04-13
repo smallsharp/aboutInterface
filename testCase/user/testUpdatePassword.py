@@ -4,7 +4,7 @@ import readConfig as readConfig
 from common import mHttp
 from common import businessCommon
 from common import utils
-from common.Log import MyLog
+from common.mLog import MyLog
 
 localReadConfig = readConfig.ReadConfig()
 localConfigHttp = mHttp.MyHttp()

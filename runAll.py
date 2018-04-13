@@ -1,12 +1,15 @@
 # encoding=utf-8
 import os
 import unittest
-from common.Log import MyLog as Log
 import mParser
+from common.mLog import MyLog as Log
 from common import HTMLTestReportCN
-from common.configEmail import MyEmail
+from common.mEmail import MyEmail
 
-iniParser = mParser.ReadConfig()
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
+
 
 class AllTest:
 
@@ -15,16 +18,15 @@ class AllTest:
         log = Log.get_log()
         logger = log.get_logger()
         resultPath = log.get_report_path()
-        on_off = iniParser.get_email("on_off")
-        # D:\workspace\PythonStation\interfaceTest\caselist.txt
-        self.caseFile = os.path.join(mParser.proDir, "caselist.txt")
-        self.caseList = self.getCaseList()  # ['user/testLogin', 'user/testRegister']
-        self.caseDir = os.path.join(mParser.proDir, "testCase")  # D:\workspace\PythonStation\interfaceTest\testCase
+        on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
+        caseFile = os.path.join(PATH('caselist.txt')) # D:\workspace\python\mInterface\caselist.txt
+        self.caseList = self.getCaseList(caseFile)  # ['user/testLogin', 'user/testRegister']
+        self.caseDir = os.path.join(PATH('testCase'))  # D:\workspace\PythonStation\interfaceTest\testCase
         self.email = MyEmail.get_email()
 
-    def getCaseList(self):
+    def getCaseList(self,filePath):
         caseList = []
-        with open(self.caseFile, 'r') as f:
+        with open(filePath, 'r') as f:
             for value in f.readlines():
                 data = str(value)
                 if data != '' and not data.startswith('#'):
@@ -36,45 +38,34 @@ class AllTest:
         suite_module = []
         for case in self.caseList:
             caseName = case.split("/")[-1]
-            print(caseName + ".py")
             discover = unittest.defaultTestLoader.discover(self.caseDir, pattern=caseName + '.py', top_level_dir=None)
             suite_module.append(discover)
         if len(suite_module) > 0:
             for suite in suite_module:
                 for testName in suite:
-                    print("testName:", testName)
                     testsuite.addTest(testName)
         else:
             return None
-
-        print("test_suite:", testsuite)
         return testsuite
 
     def run(self):
-        try:
-            suite = self.getTestSuite()
-            if suite is not None:
-                logger.info("********TEST START********")
-                fp = open(resultPath, 'wb')
-                runner = HTMLTestReportCN.HTMLTestRunner(stream=fp, title='Test Report', description='Test Description')
+        suite = self.getTestSuite()
+        if suite is not None:
+            logger.info("********TEST START********")
+            with open(resultPath,'wb') as oFile:
+                runner = HTMLTestReportCN.HTMLTestRunner(stream=oFile, title='Test Report', description='Test Description')
                 runner.run(suite)
-            else:
-                logger.info("Have no case to test.")
-        except Exception as ex:
-            logger.error(str(ex))
-        finally:
-            logger.info("*********TEST END*********")
-            fp.close()
-            # send test report by email
-            if on_off == 'on':
-                logger.info("sending email..")
-                pass
-                # self.email.send_email()
-            elif on_off == 'off':
-                logger.info("Doesn't send report email to developer.")
-            else:
-                logger.info("Unknow state.")
-
+        else:
+            logger.info("Have no case to test.")
+        # send report email
+        if on_off == 'on':
+            logger.info("sending email..")
+            # self.email.send_email()
+        elif on_off == 'off':
+            logger.info("Doesn't send report email to developer.")
+        else:
+            logger.info("Unknow state.")
+        logger.info("*********TEST END*********")
 
 if __name__ == '__main__':
     obj = AllTest()

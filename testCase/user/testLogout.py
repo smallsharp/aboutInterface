@@ -1,7 +1,7 @@
 import unittest
 import paramunittest
 import readConfig as ReadConfig
-from common.Log import MyLog
+from common.mLog import MyLog
 from common import utils
 from common import mHttp
 from common import businessCommon
