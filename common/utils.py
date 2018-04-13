@@ -7,12 +7,15 @@ from common.mHttp import MyHttp
 from common.mLog import MyLog as Log
 import json
 
-proDir = mParser.proDir
 mhttp = MyHttp()
 log = Log.get_log()
 logger = log.get_logger()
 caseNo = 0
 
+
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
 
 def get_visitor_token():
     """
@@ -72,7 +75,7 @@ def get_xls(xls_name, sheet_name):
     """
     cls = []
     # get xls file's path
-    xlsPath = os.path.join(proDir, "testFile", 'case', xls_name)
+    xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
     # open xls file
     file = open_workbook(xlsPath)
     # get sheet by name
@@ -94,7 +97,7 @@ def set_xml():
     :return:
     """
     if len(database) == 0:
-        sql_path = os.path.join(proDir, "testFile", "SQL.xml")
+        sql_path = os.path.join(PATH('../testFile/SQL.xml'))
         tree = ElementTree.parse(sql_path)
         for db in tree.findall("database"):
             db_name = db.get("name")
@@ -138,26 +141,7 @@ def get_sql(database_name, table_name, sql_id):
 # ****************************** read interfaceURL xml ********************************
 
 
-def get_url_from_xml(name):
-    """
-    By name get url from interfaceURL.xml
-    :param name: interface's url name
-    :return: url
-    """
-    url_list = []
-    url_path = os.path.join(proDir, 'testFile', 'interfaceURL.xml')
-    tree = ElementTree.parse(url_path)
-    for u in tree.findall('url'):
-        url_name = u.get('name')
-        if url_name == name:
-            for c in u.getchildren():
-                url_list.append(c.text)
-
-    url = '/v2/' + '/'.join(url_list)
-    return url
 
 if __name__ == "__main__":
     print(get_xls("userCase.xlsx","login"))
-
-    print(get_url_from_xml('login'))
     # set_visitor_token_to_config()

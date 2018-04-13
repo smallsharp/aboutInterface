@@ -6,20 +6,20 @@ from common import utils
 from common import mHttp as ConfigHttp
 import os
 
-login_xls = utils.get_xls("userCase.xlsx", "login")
+login = utils.get_xls("userCase.xlsx", "login")
 # ['login', 'get', 18521035133.0, 123456.0, '0', '220119', 'account or password error!']
 # ['login_PasswordError', 'get', 18521035133.0, 111111.0, '1', '200', 'success!']
+
+
 mhttp = ConfigHttp.MyHttp()
 log = Log.MyLog.get_log()
 logger = log.get_logger()
-
-
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 iniParser = mParser.MyIniParser(PATH('../../interface.ini'))
 
-@paramunittest.parametrized(*login_xls)
+@paramunittest.parametrized(*login)
 class Login(unittest.TestCase):
 
     def setParameters(self, case_name, method, loginAccount, password, result, code, msg):
@@ -35,11 +35,6 @@ class Login(unittest.TestCase):
         self.resJson = None
 
     def checkNum(self, num):
-        """
-        防止数值类型转换
-        :param num:
-        :return:
-        """
         if num == int(num):
             return int(num)
         return num
