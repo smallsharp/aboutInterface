@@ -92,7 +92,7 @@ class Email:
         # if the file content is not null, then config the email file
         if self.check_file():
 
-            reportpath = self.log.get_result_path()
+            reportpath = self.log.get_report_dir()
             zippath = os.path.join(mParser.proDir, "result", "test.zip")
 
             # zip file

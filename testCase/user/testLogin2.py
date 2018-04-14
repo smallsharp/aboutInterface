@@ -1,38 +1,45 @@
 import unittest
 import paramunittest
 import mParser
-from common import mLog as Log
+from common import mLog
 from common import utils
-from common import mHttp as ConfigHttp
+from common import mHttp
 import os
 
 login = utils.get_xls("userCase.xlsx", "login")
+titles = utils.get_xls_title("userCase.xlsx", "login")
+# ['case_name', 'method', 'loginAccount', 'password', 'result', 'code', 'msg']
 # ['login', 'get', 18521035133.0, 123456.0, '0', '220119', 'account or password error!']
 # ['login_PasswordError', 'get', 18521035133.0, 111111.0, '1', '200', 'success!']
 
-
-mhttp = ConfigHttp.MyHttp()
-log = Log.MyLog.get_log()
+mhttp = mHttp.MyHttp()
+log = mLog.MyLog.get_log()
 logger = log.get_logger()
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 iniParser = mParser.MyIniParser(PATH('../../interface.ini'))
 
+
 @paramunittest.parametrized(*login)
 class Login(unittest.TestCase):
 
-    def setParameters(self, case_name, method, loginAccount, password, result, code, msg):
-        print("set Parameters")
-        self.case_name = str(case_name)
-        self.method = str(method)
-        self.loginAccount = self.checkNum(loginAccount)
-        self.password = self.checkNum(password)
-        self.result = str(result)
-        self.codeExp = self.checkNum(code)
-        self.msgExp = str(msg)
-        self.res = None
-        self.resJson = None
+    # def setParameters(self, case_name, method, loginAccount, password, result, code, msg):
+    #     print("set Parameters")
+    #     self.case_name = str(case_name)
+    #     self.method = str(method)
+    #     self.loginAccount = self.checkNum(loginAccount)
+    #     self.password = self.checkNum(password)
+    #     self.result = str(result)
+    #     self.codeExp = self.checkNum(code)
+    #     self.msgExp = str(msg)
+    #     self.res = None
+    #     self.resJson = None
+
+    def setParameters(self, *params):
+        # params:('login_PasswordError', 'get', 18521035133.0, 111111.0, '1', '200', 'success!')
+        self.case_name, self.method, *args, self.result, self.codeExp, self.msgExp = params
+        self.reqParams = args  # [18521035133.0, 111111.0]
 
     def checkNum(self, num):
         if num == int(num):
@@ -40,20 +47,19 @@ class Login(unittest.TestCase):
         return num
 
     def setUp(self):
-        print('setup')
-        print(self.case_name + "准备进入测试")
-
+        print("{}准备进入测试".format(self.case_name))
 
     def testLogin(self):
-        print('test')
-        # self.uri = '/memberSite/sso/loginJson'
-        self.uri =iniParser.getItem('memberSite','login')
+        print('开始执行测试')
+        self.uri = iniParser.getItem('memberSite', 'login') # '/memberSite/sso/loginJson'
         print("第一步：设置url  " + self.uri)
         mhttp.set_url(self.uri)
 
         print("第二步：设置header(token等)")
 
         # set params
+        # ['case_name', 'method', 'loginAccount', 'password', 'result', 'code', 'msg']
+        # ['login', 'get', 18521035133.0, 123456.0, '0', '220119', 'account or password error!']
         params = {"loginAccount": self.loginAccount, "password": self.password}
         mhttp.set_params(params)
         print("第三步：设置发送请求的参数:", params)

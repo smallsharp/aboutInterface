@@ -2,9 +2,9 @@
 import os
 import unittest
 import mParser
-from common.mLog import MyLog as Log
-from common import HTMLTestReportCN
+from common.mLog import MyLog
 from common.mEmail import MyEmail
+from common import HTMLTestReportCN
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -14,15 +14,13 @@ PATH = lambda p: os.path.abspath(
 class AllTest:
 
     def __init__(self):
-        # global log, logger, resultPath, on_off
-        global log, logger, on_off
-        log = Log.get_log()
-        logger = log.get_logger()
-        self.reportPath = log.get_report_path()
-        print(self.reportPath)
-        on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
+
+        log = MyLog.get_log()
+        self.logger = MyLog.get_log().get_logger()
+        self.reportPath = log.get_report_path()  # D:\workspace\mInterface\result\20180414213218\report.html
+        self.on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
         # D:\workspace\python\mInterface\caselist.txt
-        self.caseList = self.getCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin', 'user/testRegister']
+        self.caseList = self.getCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin2', 'user/testRegister']
         self.caseDir = os.path.join(PATH('testCase'))  # D:\workspace\PythonStation\interfaceTest\testCase
         self.email = MyEmail.get_email()
 
@@ -54,22 +52,22 @@ class AllTest:
         print('run')
         suite = self.getTestSuite()
         if suite is not None:
-            logger.info("********TEST START********")
+            self.logger.info("********TEST START********")
             with open(self.reportPath, 'wb') as oFile:
                 runner = HTMLTestReportCN.HTMLTestRunner(stream=oFile, title='Test Report',
                                                          description='Test Description')
                 runner.run(suite)
         else:
-            logger.info("Have no case to test.")
+            self.logger.info("Have no case to test.")
         # send report email
-        if on_off == 'on':
-            logger.info("sending email..")
+        if self.on_off == 'on':
+            self.logger.info("sending email..")
             # self.email.send_email()
-        elif on_off == 'off':
-            logger.info("Doesn't send report email to developer.")
+        elif self.on_off == 'off':
+            self.logger.info("Doesn't send report email to developer.")
         else:
-            logger.info("Unknow state.")
-        logger.info("*********TEST END*********")
+            self.logger.info("Unknow state.")
+        self.logger.info("*********TEST END*********")
 
 
 if __name__ == '__main__':

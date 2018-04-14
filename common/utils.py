@@ -12,46 +12,9 @@ log = Log.get_log()
 logger = log.get_logger()
 caseNo = 0
 
-
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
-
-def get_visitor_token():
-    """
-    create a token for visitor
-    :return:
-    """
-    # host = config.get_http("BASEURL")
-    host = mParser.MyIniParser(mParser.configIni).getItem('HTTP','host')
-    response = requests.get(host+"/v2/User/Token/generate")
-    info = response.json()
-    token = info.get("info")
-    logger.debug("Create token:%s" % (token))
-    return token
-
-
-def set_visitor_token_to_config():
-    """
-    set token that created for visitor to config
-    :return:
-    """
-    token_v = get_visitor_token()
-    # config.set_headers("TOKEN_V", token_v)
-
-
-def get_value(json, name1, name2):
-    """
-    get value by key
-    :param json:
-    :param name1:
-    :param name2:
-    :return:
-    """
-    info = json['info']
-    group = info[name1]
-    value = group[name2]
-    return value
 
 
 def show_return_msg(response):
@@ -73,7 +36,7 @@ def get_xls(xls_name, sheet_name):
     get interface data from xls file
     :return:
     """
-    cls = []
+    lines = []
     # get xls file's path
     xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
     # open xls file
@@ -84,13 +47,21 @@ def get_xls(xls_name, sheet_name):
     nrows = sheet.nrows
     for i in range(nrows):
         if sheet.row_values(i)[0] != u'case_name':
-            cls.append(sheet.row_values(i))
-    return cls
+            lines.append(sheet.row_values(i))
+    return lines
+
+def get_xls_title(xls_name, sheet_name):
+    # get xls file's path
+    xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
+    # open xls file
+    file = open_workbook(xlsPath)
+    # get sheet by name
+    sheet = file.sheet_by_name(sheet_name)
+    # get one sheet's rows
+    return sheet.row_values(0)
 
 # ****************************** read SQL xml ********************************
 database = {}
-
-
 def set_xml():
     """
     set sql xml
@@ -138,8 +109,6 @@ def get_sql(database_name, table_name, sql_id):
     db = get_xml_dict(database_name, table_name)
     sql = db.get(sql_id)
     return sql
-# ****************************** read interfaceURL xml ********************************
-
 
 
 if __name__ == "__main__":
