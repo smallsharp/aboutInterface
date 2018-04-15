@@ -20,11 +20,11 @@ class AllTest:
         self.reportPath = log.get_report_path()  # D:\workspace\mInterface\result\20180414213218\report.html
         self.on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
         # D:\workspace\python\mInterface\caselist.txt
-        self.caseList = self.getCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin2', 'user/testRegister']
+        self.caseList = self.initCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin2', 'user/testRegister']
         self.caseDir = os.path.join(PATH('testCase'))  # D:\workspace\PythonStation\interfaceTest\testCase
         self.email = MyEmail.get_email()
 
-    def getCaseList(self, filePath):
+    def initCaseList(self, filePath):
         caseList = []
         with open(filePath, 'r') as f:
             for value in f.readlines():
@@ -33,7 +33,7 @@ class AllTest:
                     caseList.append(data.replace('\n', ''))
         return caseList
 
-    def getTestSuite(self):
+    def initTestSuite(self):
         testsuite = unittest.TestSuite()
         suite_module = []
         for case in self.caseList:
@@ -50,7 +50,7 @@ class AllTest:
 
     def run(self):
         print('run')
-        suite = self.getTestSuite()
+        suite = self.initTestSuite()
         if suite is not None:
             self.logger.info("********TEST START********")
             with open(self.reportPath, 'wb') as oFile:
