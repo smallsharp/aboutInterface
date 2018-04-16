@@ -23,8 +23,8 @@ class MyDB:
     }
 
     def __init__(self):
-        self.log = Log.get_log()
-        self.logger = self.log.get_logger()
+        self.log = Log.getLog()
+        self.logger = self.log.getLogger()
         self.db = None
         self.cursor = None
 

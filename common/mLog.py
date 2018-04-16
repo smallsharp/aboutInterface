@@ -1,5 +1,4 @@
 import os
-import mParser
 import logging
 from datetime import datetime
 import threading
@@ -13,9 +12,7 @@ PATH = lambda p: os.path.abspath(
 class Log:
 
     def __init__(self):
-
-        # 测试报告的目录
-        self.reportDir = os.path.join(PATH('../report'))
+        self.reportDir = os.path.join(PATH('../report')) # 测试报告的目录
         if not os.path.exists(self.reportDir):
             os.mkdir(self.reportDir)
 
@@ -23,7 +20,6 @@ class Log:
         self.logDir = os.path.join(self.reportDir, str(datetime.now().strftime("%Y%m%d%H%M%S")))
         if not os.path.exists(self.logDir):
             os.mkdir(self.logDir)
-
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG) # 将日志的输出级别调整为DEBUG
         handler = logging.FileHandler(os.path.join(self.logDir, "output.log"))
@@ -33,7 +29,7 @@ class Log:
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
-    def get_logger(self):
+    def getLogger(self):
         return self.logger
 
     def build_start_line(self, case_no):
@@ -68,17 +64,16 @@ class MyLog:
         pass
 
     @staticmethod
-    def get_log():
-
+    def getLog():
         if MyLog.log is None:
             MyLog.mutex.acquire()
-            MyLog.log = Log()
+            MyLog.log = Log() # new log instance
             MyLog.mutex.release()
         return MyLog.log
 
 if __name__ == "__main__":
-    log = MyLog.get_log()
-    logger = log.get_logger()
+    log = MyLog.getLog()
+    logger = log.getLogger()
     logger.debug("test debug")
     logger.info("test info")
     print('ok')

@@ -1,9 +1,9 @@
 import os
 import unittest
 import mParser
-from common import utils
-from common import mLog
-from common import mHttp
+from common import mUtils
+from common.mLog import MyLog
+from common.mRequests import MyRequests
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -11,10 +11,10 @@ PATH = lambda p: os.path.abspath(
 
 
 class MyBaseCase(unittest.TestCase):
-    mhttp = mHttp.MyHttp()
-    log = mLog.MyLog.get_log()
-    logger = log.get_logger()
-    iniParser = mParser.MyIniParser(PATH('../interface.ini'))
+
+    mRequest = MyRequests() # request instance
+    logger = MyLog.getLog().getLogger()
+    iniParser = mParser.MyIniParser(PATH('../interface.ini')) # parser for interface
 
     # 1
     def setParameters(self, *params):
@@ -32,7 +32,7 @@ class MyBaseCase(unittest.TestCase):
         :param sheetName: sheet name
         :return: params(not common params,like method,code) like loginAccount,password etc...
         """
-        titles = utils.get_xls_title(xlsxName, sheetName)
+        titles = mUtils.get_xls_title(xlsxName, sheetName)
         paramsTitle = []
         for t in titles:
             if t not in ('case_name', 'method', 'result', 'code', 'msg'):
@@ -42,7 +42,7 @@ class MyBaseCase(unittest.TestCase):
     def checkNum(self, numTurple):
         new = list()
         for num in numTurple:
-            if num == int(num):
+            if isinstance(num, int):
                 num = int(num)
             new.append(num)
         return tuple(new)
@@ -66,15 +66,18 @@ class MyBaseCase(unittest.TestCase):
     def tearDown(self):
         print("{}测试结束".format(self.case_name))
 
-    def checkResult(self):
-        self.resJson = self.res.json()
-        if self.result == '0':
-            self.assertEqual(self.resJson['code'], str(int(self.codeExp)))
-            self.assertEqual(self.resJson['message'], self.msgExp)
-            # self.assertEqual(email, self.email)
-        elif self.result == '1':
-            self.assertEqual(self.resJson['code'], self.codeExp)
-            self.assertEqual(self.resJson['message'], self.msgExp)
+    def checkResult(self,result=None):
+        if result:
+            self.resJson = result.json()
+            if self.result == '0':
+                self.assertEqual(self.resJson['code'], str(int(self.codeExp)))
+                self.assertEqual(self.resJson['message'], self.msgExp)
+            elif self.result == '1':
+                self.assertEqual(self.resJson['code'], self.codeExp)
+                self.assertEqual(self.resJson['message'], self.msgExp)
+            else:
+                print('result:', self.result)
         else:
-            print('result:', self.result)
+            self.assertTrue(result)
         print('result of {} is {}'.format(self.case_name, self.result))
+

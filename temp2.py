@@ -3,9 +3,14 @@ value = ['18521035133', '11111']
 # params = {"loginAccount": self.loginAccount, "password": self.password}
 
 
-dict1 = dict()
-for k, v in zip(title, value):
-    print(k,v)
-    dict1[k] = v
+# dict1 = dict()
+# for k, v in zip(title, value):
+#     print(k,v)
+#     dict1[k] = v
+#
+# print(dict1)
 
-print(dict1)
+
+print(isinstance(23.0,int))
+
+print(int(23.10))

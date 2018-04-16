@@ -36,8 +36,8 @@ class Email:
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.subject = "接口测试报告" + " " + date
 
-        self.log = MyLog.get_log()
-        self.logger = self.log.get_logger()
+        self.log = MyLog.getLog()
+        self.logger = self.log.getLogger()
         self.msg = MIMEMultipart('related')
 
     def config_header(self):

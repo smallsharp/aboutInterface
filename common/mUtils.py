@@ -3,13 +3,13 @@ import mParser
 import os
 from xlrd import open_workbook
 from xml.etree import ElementTree
-from common.mHttp import MyHttp
+from common.mRequests import MyRequests
 from common.mLog import MyLog as Log
 import json
 
-mhttp = MyHttp()
-log = Log.get_log()
-logger = log.get_logger()
+mhttp = MyRequests()
+log = Log.getLog()
+logger = log.getLogger()
 caseNo = 0
 
 PATH = lambda p: os.path.abspath(
@@ -31,7 +31,7 @@ def show_return_msg(response):
 # ****************************** read testCase excel ********************************
 
 
-def get_xls(xls_name, sheet_name):
+def get_xls(xls_name: object, sheet_name: object) -> object:
     """
     get interface data from xls file
     :return:

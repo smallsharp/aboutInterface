@@ -1,14 +1,5 @@
-user/testLogin2
-user/testRegister
+user/testLogin
+goodsSite/testHomeBanner2
+#user/testRegister
 #user/testRegisterQuick
 #user/testGenerate
-#user/testLoginFB
-#user/testLogout
-#user/testAccountSetting
-#user/testUpdatePassword
-#user/testUploadImg
-#user/testGetAddressList
-#user/testGetAddress
-#product/testGetProductInfo
-#user/testAddAddress
-#user/testDeleteAddress
