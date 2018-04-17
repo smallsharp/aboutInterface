@@ -34,7 +34,7 @@ def show_return_msg(response):
 def get_xls(xls_name: object, sheet_name: object) -> object:
     lines = []
     # get xls file's path
-    xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
+    xlsPath = os.path.join(PATH("../testFile"), xls_name)
     # open xls file
     file = open_workbook(xlsPath)
     # get sheet by name
@@ -48,7 +48,7 @@ def get_xls(xls_name: object, sheet_name: object) -> object:
 
 def get_xls_title(xls_name, sheet_name):
     # get xls file's path
-    xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
+    xlsPath = os.path.join(PATH("../testFile"), xls_name)
     # open xls file
     file = open_workbook(xlsPath)
     # get sheet by name

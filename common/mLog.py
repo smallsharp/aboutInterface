@@ -17,12 +17,13 @@ class Log:
             os.mkdir(self.reportDir)
 
         # 日志文件的目录
-        self.logDir = os.path.join(self.reportDir, str(datetime.now().strftime("%Y%m%d%H%M%S")))
+        # self.logDir = os.path.join(self.reportDir, str(datetime.now().strftime("%Y%m%d%H%M%S")))
+        self.logDir = os.path.join(self.reportDir, str(datetime.now().strftime("%Y%m%d")))
         if not os.path.exists(self.logDir):
             os.mkdir(self.logDir)
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG) # 将日志的输出级别调整为DEBUG
-        handler = logging.FileHandler(os.path.join(self.logDir, "output.log"))
+        handler = logging.FileHandler(os.path.join(self.logDir, "report.log"))
 
         # 设置日志的打印格式
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

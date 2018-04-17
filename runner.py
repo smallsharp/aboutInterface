@@ -18,8 +18,7 @@ class AllTest:
         self.logger = MyLog.getLog().getLogger()
         self.reportPath = log.get_report_path()  # D:\workspace\mInterface\result\20180414213218\report.html
         self.on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
-        self.caseList = self.initCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin', 'goodsSite/testHomeBanner2']
-        print('caseList:',self.caseList)
+        # self.caseList = self.initCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin', 'goodsSite/testHomeBanner2']
         self.email = MyEmail.get_email()
 
     def initCaseList(self, filePath):

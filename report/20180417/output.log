@@ -1,0 +1,13 @@
+2018-04-17 23:41:08,522 - INFO - ********TEST START********
+2018-04-17 23:41:08,538 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-17 23:41:08,710 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?clientType=H5&abbr=CN&showPage=home&clientVersion= HTTP/1.1" 200 None
+2018-04-17 23:41:08,725 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-17 23:41:08,882 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?clientType=&abbr=CN&showPage=home&clientVersion= HTTP/1.1" 200 None
+2018-04-17 23:41:08,897 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-17 23:41:09,817 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=123456 HTTP/1.1" 200 None
+2018-04-17 23:41:09,817 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-17 23:41:10,595 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035132&password=111111 HTTP/1.1" 200 None
+2018-04-17 23:41:10,595 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-17 23:41:10,814 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111 HTTP/1.1" 200 None
+2018-04-17 23:41:10,830 - INFO - Doesn't send report email to developer.
+2018-04-17 23:41:10,830 - INFO - *********TEST END*********

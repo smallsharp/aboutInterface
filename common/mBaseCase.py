@@ -11,13 +11,14 @@ PATH = lambda p: os.path.abspath(
 
 
 class MyBaseCase(unittest.TestCase):
+
     mRequest = MyRequests()  # request instance
     logger = MyLog.getLog().getLogger()
     iniParser = mParser.MyIniParser(PATH('../interface.ini'))  # parser for interface
 
     # 1
     def setParameters(self, *params):
-        print('DATA:', params)
+        print(params)
         self.case, self.method, *args, self.result, self.codeExp, self.msgExp = params
         self.reqParams = self.checkNum(args)
 

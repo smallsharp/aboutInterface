@@ -58,6 +58,7 @@ class MyRequests:
             self.state = 1
 
     def send(self):
+        print(self.url)
         if self.method == 'get':
             return self.get()
         elif self.method == 'post':
@@ -68,6 +69,7 @@ class MyRequests:
     def get(self):
         try:
             response = requests.get(self.url, headers=self.headers, params=self.params, timeout=float(self.timeout))
+            print(response.url)
             return response
         except TimeoutError:
             self.logger.error("Time out!")
@@ -77,6 +79,7 @@ class MyRequests:
         try:
             response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data,
                                      timeout=float(self.timeout))
+            print(response.url)
             return response
         except TimeoutError:
             self.logger.error("Time out!")
