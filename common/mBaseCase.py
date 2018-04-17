@@ -11,20 +11,19 @@ PATH = lambda p: os.path.abspath(
 
 
 class MyBaseCase(unittest.TestCase):
-
-    mRequest = MyRequests() # request instance
+    mRequest = MyRequests()  # request instance
     logger = MyLog.getLog().getLogger()
-    iniParser = mParser.MyIniParser(PATH('../interface.ini')) # parser for interface
+    iniParser = mParser.MyIniParser(PATH('../interface.ini'))  # parser for interface
 
     # 1
     def setParameters(self, *params):
         print('DATA:', params)
-        self.case_name, self.method, *args, self.result, self.codeExp, self.msgExp = params
+        self.case, self.method, *args, self.result, self.codeExp, self.msgExp = params
         self.reqParams = self.checkNum(args)
 
     # 2
     def setUp(self):
-        print("{} is running".format(self.case_name))
+        print("{} is running".format(self.case))
 
     def getParamsTitle(self, xlsxName, sheetName):
         """
@@ -35,14 +34,14 @@ class MyBaseCase(unittest.TestCase):
         titles = mUtils.get_xls_title(xlsxName, sheetName)
         paramsTitle = []
         for t in titles:
-            if t not in ('case_name', 'method', 'result', 'code', 'msg'):
+            if t not in ('case', 'method', 'result', 'code', 'msg'):
                 paramsTitle.append(t)
         return paramsTitle
 
     def checkNum(self, numTurple):
         new = list()
         for num in numTurple:
-            if isinstance(num, int):
+            if isinstance(num, float):
                 num = int(num)
             new.append(num)
         return tuple(new)
@@ -64,20 +63,19 @@ class MyBaseCase(unittest.TestCase):
 
     # 4
     def tearDown(self):
-        print("{}测试结束".format(self.case_name))
+        print("{}测试结束".format(self.case))
 
-    def checkResult(self,result=None):
+    def checkResult(self, result=None):
         if result:
             self.resJson = result.json()
             if self.result == '0':
                 self.assertEqual(self.resJson['code'], str(int(self.codeExp)))
                 self.assertEqual(self.resJson['message'], self.msgExp)
             elif self.result == '1':
-                self.assertEqual(self.resJson['code'], self.codeExp)
+                self.assertEqual(self.resJson['code'], str(int(self.codeExp)))
                 self.assertEqual(self.resJson['message'], self.msgExp)
             else:
                 print('result:', self.result)
         else:
             self.assertTrue(result)
-        print('result of {} is {}'.format(self.case_name, self.result))
-
+        print('result of {} is {}'.format(self.case, self.result))

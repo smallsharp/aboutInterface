@@ -68,7 +68,6 @@ class MyRequests:
     def get(self):
         try:
             response = requests.get(self.url, headers=self.headers, params=self.params, timeout=float(self.timeout))
-            # response.raise_for_status()
             return response
         except TimeoutError:
             self.logger.error("Time out!")

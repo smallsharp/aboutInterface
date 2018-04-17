@@ -18,7 +18,7 @@ class AllTest:
         self.logger = MyLog.getLog().getLogger()
         self.reportPath = log.get_report_path()  # D:\workspace\mInterface\result\20180414213218\report.html
         self.on_off = mParser.MyIniParser(mParser.configIni).getItem('EMAIL', 'on_off')
-        self.caseList = self.initCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin2', 'user/testRegister']
+        self.caseList = self.initCaseList(os.path.join(PATH('caselist.txt')))  # ['user/testLogin', 'goodsSite/testHomeBanner2']
         print('caseList:',self.caseList)
         self.email = MyEmail.get_email()
 
@@ -32,16 +32,20 @@ class AllTest:
         return caseList
 
     def initTestSuite(self):
-        for case in self.caseList:
-            caseName = case.split("/")[-1]
-            print('caseName:',caseName)
-            suite = unittest.defaultTestLoader.discover(os.path.join(PATH('testCase')), pattern=caseName + '.py', top_level_dir=None)
+        # for case in self.caseList:
+        #     caseName = case.split("/")[-1]
+        #     print('caseName:',caseName)
+        #     print('path:',os.path.join(PATH('testCase')))
+        suite = unittest.defaultTestLoader.discover(os.path.join(PATH('testCase')), pattern='test*' + '.py', top_level_dir=None)
         return suite
 
     def run(self):
         print('run')
         suite = self.initTestSuite()
+
         print('suite:',suite)
+        for name in suite:
+            print('name:',name)
         if suite is not None:
             self.logger.info("********TEST START********")
             with open(self.reportPath, 'wb') as oFile:

@@ -32,10 +32,6 @@ def show_return_msg(response):
 
 
 def get_xls(xls_name: object, sheet_name: object) -> object:
-    """
-    get interface data from xls file
-    :return:
-    """
     lines = []
     # get xls file's path
     xlsPath = os.path.join(PATH("../testFile/case"), xls_name)
@@ -46,7 +42,7 @@ def get_xls(xls_name: object, sheet_name: object) -> object:
     # get one sheet's rows
     nrows = sheet.nrows
     for i in range(nrows):
-        if sheet.row_values(i)[0] != u'case_name':
+        if sheet.row_values(i)[0] != u'case':
             lines.append(sheet.row_values(i))
     return lines
 
