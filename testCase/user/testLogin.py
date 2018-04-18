@@ -11,7 +11,7 @@ class Login(MyBaseCase):
     def testLogin(self):
         uri = self.iniParser.getItem('memberSite', 'login')  # '/memberSite/sso/loginJson'
         params = self.zipParams(self.getParamsTitle("userCase.xls", "login"), self.getParamsValue())
-        self.mRequest.setAll(uri,params,self.method)
+        self.mRequest.setRequest(uri, params, self.method)
         self.res = self.mRequest.send()
         self.checkResult(self.res)
 

@@ -1,5 +1,0 @@
-user/testLogin
-goodsSite/testHomeBanner2
-#user/testRegister
-#user/testRegisterQuick
-#user/testGenerate

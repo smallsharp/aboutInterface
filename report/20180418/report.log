@@ -1,0 +1,23 @@
+2018-04-18 16:35:35,206 - INFO - ********TEST START********
+2018-04-18 16:35:35,254 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 16:35:35,552 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?clientType=H5&abbr=CN&showPage=home&clientVersion= HTTP/1.1" 200 None
+2018-04-18 16:35:35,563 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 16:35:35,720 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?clientType=&abbr=CN&showPage=home&clientVersion= HTTP/1.1" 200 None
+2018-04-18 16:35:35,727 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 16:35:35,888 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=123456 HTTP/1.1" 200 None
+2018-04-18 16:35:35,897 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 16:35:36,056 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035132&password=111111 HTTP/1.1" 200 None
+2018-04-18 16:35:36,064 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 16:35:36,240 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111 HTTP/1.1" 200 None
+2018-04-18 16:35:36,244 - INFO - Doesn't send report email to developer.
+2018-04-18 16:35:36,246 - INFO - *********TEST END*********
+2018-04-18 21:35:45,539 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 21:35:46,251 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion= HTTP/1.1" 200 None
+2018-04-18 21:35:56,684 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 21:35:57,259 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion= HTTP/1.1" 200 None
+2018-04-18 21:36:04,020 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 21:36:04,679 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion= HTTP/1.1" 200 None
+2018-04-18 21:37:55,342 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 21:37:55,934 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion= HTTP/1.1" 200 None
+2018-04-18 21:38:51,435 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-04-18 21:38:52,001 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion= HTTP/1.1" 200 None

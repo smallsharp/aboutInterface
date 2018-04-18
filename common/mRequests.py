@@ -24,30 +24,17 @@ class MyRequests:
         self.headers = {}  # 头信息
         self.params = {}  # 请求参数
         self.data = {}  # 请求参数
+        self.cookies = None
         self.files = {}
         self.state = 0
 
-    def setAll(self, uri, params, method='get'):
+    def setRequest(self, uri, params, method='get'):
         self.url = '{}://{}{}'.format(self.protocol, self.host, uri)
         self.params = params
         self.method = method
 
-    def set_url(self, uri):
-        # self.url = self.protocol + '://' + self.host + uri
-        self.url = '{}://{}{}'.format(self.protocol, self.host, uri)
-        print('url:', self.url)
-
-    def set_method(self, method):
-        self.method = method
-
     def set_headers(self, header):
         self.headers = header
-
-    def set_params(self, param):
-        self.params = param
-
-    def set_data(self, data):
-        self.data = data
 
     def set_files(self, filename):
         if filename != '':
@@ -58,28 +45,22 @@ class MyRequests:
             self.state = 1
 
     def send(self):
-        print(self.url)
         if self.method == 'get':
-            return self.get()
+            return self.get(self.url,params,headers=self.headers,cookies=self.cookies,timeout=self.timeout)
         elif self.method == 'post':
             return self.post()
         else:
             raise Exception('unknown method {}'.format(self.method))
 
-    def get(self):
-        try:
-            response = requests.get(self.url, headers=self.headers, params=self.params, timeout=float(self.timeout))
-            print(response.url)
-            return response
-        except TimeoutError:
-            self.logger.error("Time out!")
-            return None
+    def get(self,url, params=None, **kwargs):
+        return requests.get(url, params=params, **kwargs)
+
 
     def post(self):
         try:
             response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data,
                                      timeout=float(self.timeout))
-            print(response.url)
+            print("request url:", response.url)
             return response
         except TimeoutError:
             self.logger.error("Time out!")
@@ -94,15 +75,12 @@ class MyRequests:
             self.logger.error("Time out!")
             return None
 
-    def postWithJson(self):
-        try:
-            response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(self.timeout))
-            return response
-        except TimeoutError:
-            self.logger.error("Time out!")
-            return None
-
 
 if __name__ == "__main__":
-    print("ConfigHTTP")
     m = MyRequests()
+
+    url = 'https://m.taidu.com/goodsSite/home/categoryProductList'
+    params={'abbr':'CN','clientType':'H5','clientVersion':''}
+    # res = m.get("https://m.taidu.com/goodsSite/home/categoryProductList?abbr=CN&clientType=H5&clientVersion=")
+    res = m.get(url,params,timeout=0.5)
+    print(res.text)

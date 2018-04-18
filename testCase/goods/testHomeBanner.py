@@ -12,7 +12,7 @@ class HomeBanner(MyBaseCase):
     def testBanner(self):
         uri = self.iniParser.getItem('goodsSite', 'homeBanner')  # '/memberSite/sso/loginJson'
         params = self.zipParams(self.getParamsTitle("goodsCase.xls", "HBanner"), self.getParamsValue())
-        self.mRequest.setAll(uri,params,self.method)
+        self.mRequest.setRequest(uri, params, self.method)
         self.res = self.mRequest.send()
         self.checkResult(self.res)
 
