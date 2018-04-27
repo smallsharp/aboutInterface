@@ -123,9 +123,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">Test Report</h1>
 <p class='attribute'><strong>测试人员 : </strong> 最棒QA</p>
-<p class='attribute'><strong>开始时间 : </strong> 2018-04-24 00:10:50</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，错误 2，通过率= 0.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-04-25 15:13:37</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.790000</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 4，失败 3，错误 1，通过率= 0.00%</p>
 
 <p class='description'>Test Description</p>
 </div>
@@ -134,9 +134,9 @@ function html_escape(s) {
 
 <p id='show_detail_line'>
 <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 3 }</a>
 <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 4 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -156,34 +156,127 @@ function html_escape(s) {
     <td>详细</td>
 </tr>
 
-<tr class='errorClass warning'>
+<tr class='failClass warning'>
     <td>paramunittest.Login_0</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
-    <td class="text-center">0</td>
     <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
 </tr>
 
 <tr id='ft1_1' class='none'>
-    <td class='errorCase'><div class='testcase'>testCase</div></td>
+    <td class='failCase'><div class='testcase'>testCase</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
     <div id='div_ft1_1' class="collapse">  -->
 
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
     <div id='div_ft1_1' class="collapse in">
     <pre>
     
-ft1_1: ([[...], [...]], [[...], [...]])
+ft1_1: origin data: ('login_acc_error', 'get', 'https://m.taidu.com/memberSite/sso/loginJson', 18521035133.0, 123456.0, 'N', 'N', '220119', 'account or password error!')
+login_acc_error is running
+https://m.taidu.com/memberSite/sso/loginJson
+{'code': '220120', 'message': 'is empty!', 'repeatToken': None, 'result': 'account or password is null'}
+login_acc_error测试结束
 Traceback (most recent call last):
-  File "D:\apps\Anaconda\lib\site-packages\paramunittest.py", line 91, in setUp
-    self.setParameters(*parameters[0], **parameters[1])
-  File "D:\workspace\mInterface\common\mBaseCase.py", line 22, in setParameters
-    self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = params
-ValueError: not enough values to unpack (expected at least 7, got 2)
+  File "D:\workspace\python\mInterface\testCase\user\testLogin.py", line 32, in testCase
+    self.checkResult(res.json())
+  File "D:\workspace\python\mInterface\common\mBaseCase.py", line 83, in checkResult
+    self.assertEqual(result['code'], str(int(self.codeExp)))
+AssertionError: '220120' != '220119'
+- 220120
++ 220119
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='failClass warning'>
+    <td>paramunittest.Login_1</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='ft2_1' class='none'>
+    <td class='failCase'><div class='testcase'>testCase</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
+    <div id='div_ft2_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
+    <div id='div_ft2_1' class="collapse in">
+    <pre>
+    
+ft2_1: origin data: ('login_pwd_error', 'get', 'https://m.taidu.com/memberSite/sso/loginJson', 18521035132.0, 111111.0, 'N', 'N', '220128', 'account or password error thrid!')
+login_pwd_error is running
+https://m.taidu.com/memberSite/sso/loginJson
+{'code': '220120', 'message': 'is empty!', 'repeatToken': None, 'result': 'account or password is null'}
+login_pwd_error测试结束
+Traceback (most recent call last):
+  File "D:\workspace\python\mInterface\testCase\user\testLogin.py", line 32, in testCase
+    self.checkResult(res.json())
+  File "D:\workspace\python\mInterface\common\mBaseCase.py", line 83, in checkResult
+    self.assertEqual(result['code'], str(int(self.codeExp)))
+AssertionError: '220120' != '220128'
+- 220120
+?      ^
++ 220128
+?      ^
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='failClass warning'>
+    <td>paramunittest.Login_2</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',1)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+<tr id='ft3_1' class='none'>
+    <td class='failCase'><div class='testcase'>testCase</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft3_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft3_1'>失败</button>
+    <div id='div_ft3_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft3_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft3_1'>失败</button>
+    <div id='div_ft3_1' class="collapse in">
+    <pre>
+    
+ft3_1: origin data: ('login_success', 'get', 'https://m.taidu.com/memberSite/sso/loginJson', 18521035133.0, 111111.0, 'N', 'N', '200', 'success!')
+login_success is running
+https://m.taidu.com/memberSite/sso/loginJson
+{'code': '220120', 'message': 'is empty!', 'repeatToken': None, 'result': 'account or password is null'}
+login_success测试结束
+Traceback (most recent call last):
+  File "D:\workspace\python\mInterface\testCase\user\testLogin.py", line 32, in testCase
+    self.checkResult(res.json())
+  File "D:\workspace\python\mInterface\common\mBaseCase.py", line 83, in checkResult
+    self.assertEqual(result['code'], str(int(self.codeExp)))
+AssertionError: '220120' != '200'
+- 220120
++ 200
+
 
 
     </pre>
@@ -192,33 +285,30 @@ ValueError: not enough values to unpack (expected at least 7, got 2)
 </tr>
 
 <tr class='errorClass warning'>
-    <td>paramunittest.Login_1</td>
+    <td>testLogin2.Test</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
     <td class="text-center">0</td>
     <td class="text-center">1</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',1)" class="detail" id='c4'>详细</a></td>
 </tr>
 
-<tr id='ft2_1' class='none'>
+<tr id='ft4_1' class='none'>
     <td class='errorCase'><div class='testcase'>testCase</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft2_1'>错误</button>
-    <div id='div_ft2_1' class="collapse">  -->
+    <button id='btn_ft4_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft4_1'>错误</button>
+    <div id='div_ft4_1' class="collapse">  -->
 
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft2_1'>错误</button>
-    <div id='div_ft2_1' class="collapse in">
+    <button id='btn_ft4_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft4_1'>错误</button>
+    <div id='div_ft4_1' class="collapse in">
     <pre>
     
-ft2_1: ([[...], [...]], [[...], [...]])
-Traceback (most recent call last):
-  File "D:\apps\Anaconda\lib\site-packages\paramunittest.py", line 91, in setUp
-    self.setParameters(*parameters[0], **parameters[1])
-  File "D:\workspace\mInterface\common\mBaseCase.py", line 22, in setParameters
-    self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = params
-ValueError: not enough values to unpack (expected at least 7, got 2)
+ft4_1: Traceback (most recent call last):
+  File "D:\workspace\python\mInterface\common\mBaseCase.py", line 30, in setUp
+    print("{} is running".format(self.case))
+AttributeError: 'Test' object has no attribute 'case'
 
 
     </pre>
@@ -228,10 +318,10 @@ ValueError: not enough values to unpack (expected at least 7, got 2)
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>2</td>
+    <td>4</td>
     <td>0</td>
-    <td>0</td>
-    <td>2</td>
+    <td>3</td>
+    <td>1</td>
     <td>通过率：0.00%</td>
 </tr>
 </table>

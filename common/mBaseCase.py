@@ -11,17 +11,33 @@ PATH = lambda p: os.path.abspath(
 
 
 class MyBaseCase(unittest.TestCase):
+    """
+    接收并处理数据，给子类调用
+    """
+    print('MyBaseCase in')
 
     mRequest = MyRequests()  # request instance
     logger = MyLog.getLog().getLogger()
-    # iniParser = mParser.MyIniParser(PATH('../interface.ini'))  # parser for interface
 
-    # 1
-    def setParameters(self, *params):
-        print(params)
-        self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = params
-        self.params = None
-        self.cArgs = self.checkNum(args)
+    # 1 接受请求参数，进行处理，使用参数化时，这个方法必须写
+    def setParameters(self, *data):
+        print("origin data:", data)
+        self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
+        # self.params = None
+        self.checkedArgs = self.checkNum(args)
+
+    def init(self):
+        data = None
+        self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
+        # self.params = None
+        self.checkedArgs = self.checkNum(args)
+
+    # 2
+    def setUp(self):
+        print("{} is running".format(self.case))
+        self.getParams(PATH('../testFile/userCase.xls'), 'login')
+        # for sheetName in self.getSheets():
+        #     self.getParams(PATH('../testFile/userCase.xls'),sheetName)
 
     def getParams(self,xlsPath,sheetName):
         self.params =  self.zipParams(self.getParamsTitle(xlsPath, sheetName), self.getParamsValue())
@@ -29,11 +45,6 @@ class MyBaseCase(unittest.TestCase):
     def getSheets(self):
         return ['login','categoryProductList']
 
-    # 2
-    def setUp(self):
-        print("{} is running".format(self.case))
-        for sheetName in self.getSheets():
-            self.getParams(PATH('../testFile/userCase.xls'),sheetName)
 
     def getParamsTitle(self, xlsxName, sheetName):
         """
@@ -48,6 +59,9 @@ class MyBaseCase(unittest.TestCase):
                 paramsTitle.append(t)
         return paramsTitle
 
+    def getParamsValue(self):
+        return self.checkedArgs
+
     def checkNum(self, numTurple):
         new = list()
         for num in numTurple:
@@ -55,9 +69,6 @@ class MyBaseCase(unittest.TestCase):
                 num = int(num)
             new.append(num)
         return tuple(new)
-
-    def getParamsValue(self):
-        return self.cArgs
 
     def zipParams(self, paramsTitle, paramsValue):
         """
@@ -73,7 +84,7 @@ class MyBaseCase(unittest.TestCase):
 
     # 4
     def tearDown(self):
-        print("{}测试结束".format(self.case))
+        print("{} is over ".format(self.case))
 
     def checkResult(self, result=None):
         if result:

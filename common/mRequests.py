@@ -42,7 +42,6 @@ class MyRequests:
 
     def send(self):
         if self.method == 'get':
-            print(self.url)
             return self.get(self.url, self.params, headers=self.headers, cookies=self.cookies,
                             timeout=float(self.timeout))
         elif self.method == 'post':
@@ -60,7 +59,7 @@ class MyRequests:
         """
         return requests.get(url, params=params, **kwargs)
 
-    def post2(self, url, data=None, json=None, **kwargs):
+    def post(self, url, data=None, json=None, **kwargs):
         """
 
         :param url:
@@ -70,16 +69,6 @@ class MyRequests:
         :return:
         """
         return requests.post(url, data=data, json=json, **kwargs)
-
-    # def post(self):
-    #     try:
-    #         response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data,
-    #                                  timeout=float(self.timeout))
-    #         print("request url:", response.url)
-    #         return response
-    #     except TimeoutError:
-    #         self.logger.error("Time out!")
-    #         return None
 
     def set_files(self, filename):
         if filename != '':
