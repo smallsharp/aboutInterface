@@ -45,7 +45,8 @@ class MyRequests:
             return self.get(self.url, self.params, headers=self.headers, cookies=self.cookies,
                             timeout=float(self.timeout))
         elif self.method == 'post':
-            return self.post(self.url, self.data)
+            return self.post(self.url, self.data,json=self.json,headers=self.headers, cookies=self.cookies,
+                            timeout=float(self.timeout))
         else:
             raise Exception('unknown method {}'.format(self.method))
 
@@ -61,7 +62,6 @@ class MyRequests:
 
     def post(self, url, data=None, json=None, **kwargs):
         """
-
         :param url:
         :param data:
         :param json:

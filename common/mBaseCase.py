@@ -22,9 +22,11 @@ class MyBaseCase(unittest.TestCase):
     # 1 接受请求参数，进行处理，使用参数化时，这个方法必须写
     def setParameters(self, *data):
         print("origin data:", data)
-        self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
-        # self.params = None
-        self.checkedArgs = self.checkNum(args)
+        # self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
+        # # self.params = None
+        # self.checkedArgs = self.checkNum(args)
+        self.case, self.method, self.url,  self.headers,self.params, self.codeExp, self.msgExp = data
+
 
     def init(self):
         data = None
@@ -35,7 +37,7 @@ class MyBaseCase(unittest.TestCase):
     # 2
     def setUp(self):
         print("{} is running".format(self.case))
-        self.getParams(PATH('../testFile/userCase.xls'), 'login')
+        # self.getParams(PATH('../testFile/userCase.xls'), 'login')
         # for sheetName in self.getSheets():
         #     self.getParams(PATH('../testFile/userCase.xls'),sheetName)
 
@@ -84,10 +86,14 @@ class MyBaseCase(unittest.TestCase):
 
     # 4
     def tearDown(self):
-        print("{} is over ".format(self.case))
+        # print("{} is over ".format(self.case))
+        pass
 
     def checkResult(self, result=None):
+        print('result:',result)
         if result:
+            import json
+            result = json.loads(result)
             self.assertEqual(result['code'], str(int(self.codeExp)))
             self.assertEqual(result['message'], self.msgExp)
-        print('result of {} is {}'.format(self.case, self.result))
+            print("success")

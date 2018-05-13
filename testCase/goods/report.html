@@ -123,9 +123,9 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">Test Report</h1>
 <p class='attribute'><strong>测试人员 : </strong> 最棒QA</p>
-<p class='attribute'><strong>开始时间 : </strong> 2018-04-23 23:38:09</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.015626</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，错误 2，通过率= 0.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-05-13 23:00:17</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.218762</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，错误 1，通过率= 0.00%</p>
 
 <p class='description'>Test Description</p>
 </div>
@@ -136,7 +136,7 @@ function html_escape(s) {
 <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
 <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
 <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -177,82 +177,16 @@ function html_escape(s) {
     <div id='div_ft1_1' class="collapse in">
     <pre>
     
-ft1_1: ('bannner_success', 'get', 'H5', 'CN', 'home', '', '0', '200', 'success!')
-bannner_success is running
-H5
-bannner_success测试结束
+ft1_1: origin data: ('bannner', 'get', 'https://m.taidu.com/goodsSite/banner/bannerList', 'N', "{'clientType': 'H5', 'abbr': 'CN', 'showPage': 'home', 'clientVersion': '', 'sign': '1ABDD8F9D420BA3FC33CED5F1BF25D00'}\n", '200', 'success!')
+bannner is running
+self.res: &lt;Response [200]&gt;
+bannner is over 
 Traceback (most recent call last):
-  File "D:\workspace\mInterface\testCase\goods\testHomeBanner.py", line 16, in testBanner
-    self.res = self.mRequest.send()
-  File "D:\workspace\mInterface\common\mRequests.py", line 47, in send
-    timeout=float(self.timeout))
-  File "D:\workspace\mInterface\common\mRequests.py", line 61, in get
-    return requests.get(url, params=params, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\api.py", line 72, in get
-    return request('get', url, params=params, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\api.py", line 58, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\sessions.py", line 494, in request
-    prep = self.prepare_request(req)
-  File "D:\apps\Anaconda\lib\site-packages\requests\sessions.py", line 437, in prepare_request
-    hooks=merge_hooks(request.hooks, self.hooks),
-  File "D:\apps\Anaconda\lib\site-packages\requests\models.py", line 305, in prepare
-    self.prepare_url(url, params)
-  File "D:\apps\Anaconda\lib\site-packages\requests\models.py", line 379, in prepare_url
-    raise MissingSchema(error)
-requests.exceptions.MissingSchema: Invalid URL 'H5': No schema supplied. Perhaps you meant http://H5?
-
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr class='errorClass warning'>
-    <td>paramunittest.HomeBanner_1</td>
-    <td class="text-center">1</td>
-    <td class="text-center">0</td>
-    <td class="text-center">0</td>
-    <td class="text-center">1</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
-</tr>
-
-<tr id='ft2_1' class='none'>
-    <td class='errorCase'><div class='testcase'>testBanner</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft2_1'>错误</button>
-    <div id='div_ft2_1' class="collapse">  -->
-
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft2_1'>错误</button>
-    <div id='div_ft2_1' class="collapse in">
-    <pre>
-    
-ft2_1: ('bannner2', 'get', '', 'CN', 'home', '', '1', 230055.0, '数据不存在!Infos:Home does not exist banner!')
-bannner2 is running
-
-bannner2测试结束
-Traceback (most recent call last):
-  File "D:\workspace\mInterface\testCase\goods\testHomeBanner.py", line 16, in testBanner
-    self.res = self.mRequest.send()
-  File "D:\workspace\mInterface\common\mRequests.py", line 47, in send
-    timeout=float(self.timeout))
-  File "D:\workspace\mInterface\common\mRequests.py", line 61, in get
-    return requests.get(url, params=params, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\api.py", line 72, in get
-    return request('get', url, params=params, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\api.py", line 58, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "D:\apps\Anaconda\lib\site-packages\requests\sessions.py", line 494, in request
-    prep = self.prepare_request(req)
-  File "D:\apps\Anaconda\lib\site-packages\requests\sessions.py", line 437, in prepare_request
-    hooks=merge_hooks(request.hooks, self.hooks),
-  File "D:\apps\Anaconda\lib\site-packages\requests\models.py", line 305, in prepare
-    self.prepare_url(url, params)
-  File "D:\apps\Anaconda\lib\site-packages\requests\models.py", line 379, in prepare_url
-    raise MissingSchema(error)
-requests.exceptions.MissingSchema: Invalid URL '': No schema supplied. Perhaps you meant http://?
+  File "D:\workspace\mInterface\testCase\goods\testHomeBanner.py", line 23, in testBanner
+    self.checkResult(self.res)
+  File "D:\workspace\mInterface\common\mBaseCase.py", line 93, in checkResult
+    self.assertEqual(result['code'], str(int(self.codeExp)))
+TypeError: 'Response' object is not subscriptable
 
 
     </pre>
@@ -262,10 +196,10 @@ requests.exceptions.MissingSchema: Invalid URL '': No schema supplied. Perhaps y
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td>通过率：0.00%</td>
 </tr>
 </table>

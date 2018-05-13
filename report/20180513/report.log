@@ -1,0 +1,190 @@
+2018-05-13 22:59:22,630 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 22:59:22,880 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:00:17,645 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:00:17,848 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:00:59,399 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:00:59,586 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:01:36,250 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:01:36,547 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:02:16,198 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:02:16,385 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:02:26,495 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:02:26,682 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:02:36,093 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:02:36,390 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:03:21,106 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:03:25,035 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:04:06,157 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:04:06,422 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:05:21,880 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:05:22,892 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20'1ABDD8F9D420BA3FC33CED5F1BF25D00'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:05:49,053 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:05:49,694 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:06:15,589 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:06:15,792 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:07:06,787 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:07:06,986 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:07:56,382 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:07:56,632 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:08:33,177 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:08:33,443 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:15:56,230 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:15:56,981 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:15:56,981 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:15:58,241 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:16:32,824 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:16:33,441 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:16:33,457 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:16:33,691 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:17:54,035 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:17:57,406 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:17:57,406 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:17:59,527 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:25:38,370 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:25:38,558 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:25:38,558 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:25:38,761 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:25:38,777 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:25:38,948 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:35:20,730 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:35:20,949 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:35:20,949 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:35:21,527 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:35:21,527 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:35:21,699 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:36:46,377 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:36:46,564 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:36:46,564 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:36:46,798 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:36:46,805 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:36:46,952 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:37:37,194 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:37:37,428 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:37:37,444 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:37:37,657 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:37:37,672 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:37:37,844 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:38:09,119 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:38:12,963 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:38:12,979 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:38:13,307 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:38:13,307 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:38:13,604 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&clientType=Android&abbr=CN HTTP/1.1" 200 None
+2018-05-13 23:38:13,635 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:38:13,635 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:38:13,635 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:38:13,869 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:39:24,424 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:24,609 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:39:24,609 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:24,812 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:39:24,828 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:25,031 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&clientType=Android&abbr=CN HTTP/1.1" 200 None
+2018-05-13 23:39:25,031 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:39:25,031 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:39:25,031 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:25,766 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:39:49,019 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:49,770 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:39:49,770 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:50,004 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:39:50,004 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:50,796 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&clientType=Android&abbr=CN HTTP/1.1" 200 None
+2018-05-13 23:39:50,811 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:39:50,811 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:39:50,811 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:39:50,983 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:40:40,791 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:40:40,963 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:40:40,978 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:40:41,534 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:40:41,534 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:40:41,737 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:40:41,753 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:40:41,753 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:40:41,753 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:40:41,925 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 None
+2018-05-13 23:48:26,867 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:48:27,068 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:48:27,068 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:48:27,974 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:48:27,990 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:48:29,531 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:48:29,546 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:48:29,546 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:48:29,546 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:48:29,727 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0
+2018-05-13 23:50:08,943 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:50:09,130 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:50:09,146 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:50:09,736 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:50:09,752 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:50:09,955 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:50:09,971 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:50:09,971 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:50:09,971 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:50:10,377 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0
+2018-05-13 23:52:03,354 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:52:03,557 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:52:03,557 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:52:03,761 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:53:31,533 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:53:31,706 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:53:31,706 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:53:31,925 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:53:31,941 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:53:32,785 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:53:32,785 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:53:32,785 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:53:32,800 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:53:33,093 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0
+2018-05-13 23:55:32,633 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:32,851 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:55:32,851 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:32,851 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:32,851 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:33,043 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList?%7B'clientType':%20'H5',%20'abbr':%20'CN',%20'showPage':%20'home',%20'clientVersion':%20'',%20'sign':%20''%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:55:33,043 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:33,043 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:33,043 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:34,074 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:55:34,089 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,089 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,089 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:34,384 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954&%7B'loginAccount':%20'18521035133',%20'password':%20'111111',%20'code':%20'',%20'rememberMe':%20'1',%20'clientType':%20'H5',%20'abbr':%20'CN',%20'clientVersion':%20'',%20'sign':%20'87823FC7334C13955C8B451B48027954'%7D%0A HTTP/1.1" 200 None
+2018-05-13 23:55:34,384 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,384 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,400 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:34,587 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:55:34,587 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,587 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:55:34,587 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:55:34,759 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0
+2018-05-13 23:57:57,444 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:57,662 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:57:57,662 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:57,662 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:57,662 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:57,845 - DEBUG - https://m.taidu.com:443 "POST /goodsSite/banner/bannerList HTTP/1.1" 404 43
+2018-05-13 23:57:57,860 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:57,860 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:57,860 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:58,063 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:57:58,063 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:58,063 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:58,063 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:58,932 - DEBUG - https://m.taidu.com:443 "POST /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:57:58,948 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:58,948 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:58,948 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:59,130 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:57:59,130 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:59,130 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:57:59,146 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:57:59,380 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0
+2018-05-13 23:58:45,673 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:58:45,892 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion=&sign=87823FC7334C13955C8B451B48027954 HTTP/1.1" 200 None
+2018-05-13 23:58:45,892 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:58:45,892 - DEBUG - Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2018-05-13 23:58:45,892 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-13 23:58:46,079 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0

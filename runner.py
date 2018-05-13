@@ -37,10 +37,6 @@ class AllTest:
         if self.on_off == 'on':
             self.logger.info("sending email..")
             # self.email.send_email()
-        elif self.on_off == 'off':
-            self.logger.info("Doesn't send report email to developer.")
-        else:
-            self.logger.info("Unknow state.")
         self.logger.info("Test End")
 
 
