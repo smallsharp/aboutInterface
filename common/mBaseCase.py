@@ -4,6 +4,8 @@ import mParser
 from common import mUtils
 from common.mLog import MyLog
 from common.mRequests import MyRequests
+import requests
+import urllib3
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -25,28 +27,39 @@ class MyBaseCase(unittest.TestCase):
         # self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
         # # self.params = None
         # self.checkedArgs = self.checkNum(args)
-        self.case, self.method, self.url,  self.headers,self.params, self.codeExp, self.msgExp = data
+        self.case, self.method, self.url, self.headers, self.params, self.codeExp, self.msgExp = data
+        self.hasSession = False
 
+    def initSession(self):
+
+        if not self.hasSession:
+            print('init session ~')
+
+            login_url = "https://m.taidu.com/memberSite/sso/loginJson"
+            login_params = {'loginAccount': '18521035133', 'password': '111111', 'code': '', 'rememberMe': '1',
+                            'clientType': 'H5', 'abbr': 'CN', 'clientVersion': '',
+                            'sign': '87823FC7334C13955C8B451B48027954'}
+            session = requests.Session()
+            urllib3.disable_warnings()
+            session.get(url=login_url, params=login_params, verify=False)  # verify=False 关闭证书验证，但是仍然会报出证书警告
+            self.hasSession = True
+        return session
 
     def init(self):
         data = None
-        self.case, self.method, self.url,*args, self.headers,self.cookies,self.codeExp, self.msgExp = data
+        self.case, self.method, self.url, *args, self.headers, self.cookies, self.codeExp, self.msgExp = data
         # self.params = None
         self.checkedArgs = self.checkNum(args)
 
     # 2
     def setUp(self):
         print("{} is running".format(self.case))
-        # self.getParams(PATH('../testFile/userCase.xls'), 'login')
-        # for sheetName in self.getSheets():
-        #     self.getParams(PATH('../testFile/userCase.xls'),sheetName)
 
-    def getParams(self,xlsPath,sheetName):
-        self.params =  self.zipParams(self.getParamsTitle(xlsPath, sheetName), self.getParamsValue())
+    def getParams(self, xlsPath, sheetName):
+        self.params = self.zipParams(self.getParamsTitle(xlsPath, sheetName), self.getParamsValue())
 
     def getSheets(self):
-        return ['login','categoryProductList']
-
+        return ['login', 'categoryProductList']
 
     def getParamsTitle(self, xlsxName, sheetName):
         """
@@ -57,7 +70,7 @@ class MyBaseCase(unittest.TestCase):
         titles = mUtils.get_xls_title(xlsxName, sheetName)
         paramsTitle = []
         for t in titles:
-            if t not in ('case', 'method', 'url','headers','cookies', 'code', 'msg'):
+            if t not in ('case', 'method', 'url', 'headers', 'cookies', 'code', 'msg'):
                 paramsTitle.append(t)
         return paramsTitle
 
@@ -90,7 +103,7 @@ class MyBaseCase(unittest.TestCase):
         pass
 
     def checkResult(self, result=None):
-        print('result:',result)
+        print('result:', result)
         if result:
             import json
             result = json.loads(result)
