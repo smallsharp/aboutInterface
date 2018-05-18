@@ -2,38 +2,59 @@ import paramunittest
 from common import mUtils
 import requests
 import unittest
+import json
 
-banner = mUtils.get_xls("goodsCase.xls", "HBanner2")  # lists contains many list
 
-@paramunittest.parametrized(*banner)
 class HomeBanner(unittest.TestCase):
 
+    session = None
 
-    # 1 接受请求参数，进行处理，使用参数化时，这个方法必须写
-    def setParameters(self, *data):
-        print("origin data:", data)
-        self.case, self.method, self.url, self.headers, self.params, self.codeExp, self.msgExp = data
+    def setUp(self):
+        print('setup')
+        self.lines = mUtils.getLines("goodsCase.xls", "HBanner2")  # lists contains many list
 
-    #3
-    def testBanner(self):
-        print('start test')
-        self.res = None
-        if self.method.lower()=='post':
-            # self.res = session.post(self.url,self.params)
-            self.res = requests.post(self.url,json=self.params)
-        elif self.method.lower()=='get':
-            # self.res= session.get(self.url,params=self.params)
-            self.res = requests.get(self.url,params=self.params)
+        global session
+        session = requests.session()
 
-        print(self.res.text)
+
+
+    def getCookies(self):
+        with open('cookies.txt','r') as file:
+            return json.load(file)
+
+    def testMethod(self):
+        for line in self.lines:
+            # for v in line:
+            #     print(v)
+            print(line)
+            url = line[2]
+            headerType = line[3]
+            params = line[4]
+            print(headerType)
+            if headerType.lower() == 'w':
+                # res = requests.get(url, params)
+                res = session.get(url,data = params)
+                session.headers.update({'Cookie':session.cookies})
+                print(res.text)
+
+                # with open('cookies.txt', 'w') as file:
+                #     file.write(json.dumps(requests.utils.dict_from_cookiejar(res.cookies)))
+
+            elif headerType.lower() == 'y':
+                # res = requests.post(url, params, cookies=self.getCookies())
+
+                res = requests.post(url, data=params, headers=session.cookies)
+                print('res:',res.text)
+
+            elif headerType.lower() == 'n':
+                res = requests.get(url, params)
+                print(res.text)
+
+            else:
+                break
 
 
 if __name__ == '__main__':
     import unittest
-    # suite = unittest.defaultTestLoader.discover('./', pattern='testHomeBanner.py',top_level_dir=None)
-    # print('suite:', suite)
-    # if suite is not None:
-    #     with open('report.html', 'wb') as oFile:
-    #         runner = HTMLTestReportCN.HTMLTestRunner(stream=oFile, title='Test Report',description='Test Description')
-    #         runner.run(suite)
+
     unittest.main()

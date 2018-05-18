@@ -4,8 +4,8 @@ import readConfig as readConfig
 
 localReadConfig = readConfig.ReadConfig()
 localConfigHttp = mRequests.MyRequests()
-localLogin_xls = mUtils.get_xls("userCase.xlsx", "login")
-localAddAddress_xls = mUtils.get_xls("userCase.xlsx", "addAddress")
+localLogin_xls = mUtils.getLines("userCase.xlsx", "login")
+localAddAddress_xls = mUtils.getLines("userCase.xlsx", "addAddress")
 
 
 # login

@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d89ad9b5-8668-42b3-b989-cdd95c800c68" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/businessCommon.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/businessCommon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/mBaseCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mBaseCase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/20180423/report.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/20180424/report.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/20180425/report.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/20180513/report.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/20180514/report.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase/goods/testCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/goods/testCase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCase/goods/testHomeBanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/goods/testHomeBanner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testFile/.~lock.goodsCase.xls#" beforeDir="false" afterPath="$PROJECT_DIR$/testFile/.~lock.goodsCase.xls#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase/user/testLogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/user/testLogin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testFile/goodsCase.xls" beforeDir="false" afterPath="$PROJECT_DIR$/testFile/goodsCase.xls" afterDir="false" />
     </list>
     <ignored path="interfaceTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="testHomeBanner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testCase/goods/testHomeBanner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="180">
+              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file leaf-file-name="testCase.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testCase/goods/testCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="144">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -72,14 +71,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="sessions.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Anaconda3.5/Lib/site-packages/requests/sessions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="511" column="8" selection-start-line="511" selection-start-column="8" selection-end-line="511" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="mBaseCase.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/mBaseCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -153,20 +158,20 @@
         <option value="$PROJECT_DIR$/report/20180416232439/report.html" />
         <option value="$PROJECT_DIR$/caselist.txt" />
         <option value="$PROJECT_DIR$/common/HTMLTestReportCN.py" />
-        <option value="$PROJECT_DIR$/common/mUtils.py" />
         <option value="$PROJECT_DIR$/common/mLog.py" />
         <option value="$PROJECT_DIR$/interface.ini" />
         <option value="$PROJECT_DIR$/testCase/test.py" />
         <option value="$PROJECT_DIR$/testCase/user/testLogin2.py" />
-        <option value="D:/Anaconda3.5/Lib/site-packages/paramunittest.py" />
         <option value="D:/Anaconda3.5/Lib/unittest/case.py" />
         <option value="$PROJECT_DIR$/testCase/user/Page.py" />
         <option value="$PROJECT_DIR$/testCase/user/Demo.py" />
         <option value="$PROJECT_DIR$/testCase/user/testLogin.py" />
         <option value="$PROJECT_DIR$/runner.py" />
         <option value="$PROJECT_DIR$/common/mRequests.py" />
-        <option value="$PROJECT_DIR$/testCase/goods/testHomeBanner.py" />
         <option value="$PROJECT_DIR$/common/mBaseCase.py" />
+        <option value="$PROJECT_DIR$/common/mUtils.py" />
+        <option value="D:/Anaconda3.5/Lib/site-packages/paramunittest.py" />
+        <option value="$PROJECT_DIR$/testCase/goods/testHomeBanner.py" />
         <option value="$PROJECT_DIR$/testCase/goods/testCase.py" />
       </list>
     </option>
@@ -181,7 +186,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -244,7 +249,7 @@
     <property name="SearchEverywhereHistoryKey" value="case&#9;FILE&#9;file://D:/workspace/python/mInterface/common/mBaseCase.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="D:\workprogram\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jiekou-python3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../request" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -621,18 +626,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.16398244" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.16398244" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32733223" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.3280757" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.47113883" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="1" weight="0.32569557" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.27131784" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.2322239" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.5417349" />
       <window_info id="Favorites" order="0" sideWeight="0.5063063" side_tool="true" weight="0.27148998" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.3400936" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="11" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="SFDX" order="11" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" visible="true" weight="0.1482602" />
@@ -640,7 +648,6 @@
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="Query Editor" order="2" />
-      <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="bottom" id="Log Manager" order="11" />
       <window_info anchor="right" x="0" y="0" width="291" height="686" id="Documentation" order="3" visible="true" weight="0.1913646" />
       <window_info anchor="right" id="Database" order="0" />
@@ -649,8 +656,7 @@
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Salesforce" order="11" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.4725926" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="11" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="SciView" order="3" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" visible="true" weight="0.1482602" />
@@ -707,7 +713,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="194" />
+      <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -716,16 +722,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/mBaseCase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/apps/Anaconda/Lib/site-packages/xlrd/__init__.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/387406496/builtins.py" />
     <entry file="file://$PROJECT_DIR$/report/20180416005413/output.log" />
@@ -802,7 +798,6 @@
       </provider>
     </entry>
     <entry file="file://D:/Anaconda3.5/Lib/site-packages/requests/api.py" />
-    <entry file="file://D:/Anaconda3.5/Lib/site-packages/requests/sessions.py" />
     <entry file="file://D:/Anaconda3.5/Lib/site-packages/xlrd/book.py" />
     <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
@@ -812,13 +807,6 @@
       </provider>
     </entry>
     <entry file="file://D:/Anaconda3.5/Lib/unittest/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/common/mUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testCase/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -826,7 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Anaconda3.5/Lib/site-packages/paramunittest.py" />
     <entry file="file://D:/Anaconda3.5/Lib/unittest/case.py" />
     <entry file="file://$PROJECT_DIR$/testCase/user/Demo.py" />
     <entry file="file://$PROJECT_DIR$/testCase/user/Page.py" />
@@ -867,13 +854,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/apps/Anaconda/Lib/site-packages/requests/sessions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="441" column="29" selection-start-line="441" selection-start-column="25" selection-end-line="441" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/apps/Anaconda/Lib/site-packages/requests/sessions.py" />
     <entry file="file://$PROJECT_DIR$/common/mRequests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -881,30 +862,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/site-packages/paramunittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testCase/goods/testHomeBanner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="180">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/common/mUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/goods/cookies.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/common/mBaseCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="511" column="8" selection-start-line="511" selection-start-column="8" selection-end-line="511" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testCase/goods/testCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        <state relative-caret-position="144">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

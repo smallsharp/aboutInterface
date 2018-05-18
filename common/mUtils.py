@@ -31,7 +31,7 @@ def show_return_msg(response):
 # ****************************** read testCase excel ********************************
 
 
-def get_xls(xls_name: object, sheet_name: object) -> object:
+def getLines(xls_name: object, sheet_name: object) -> object:
     lines = []
     # get xls file's path
     xlsPath = os.path.join(PATH("../testFile"), xls_name)
@@ -108,5 +108,5 @@ def get_sql(database_name, table_name, sql_id):
 
 
 if __name__ == "__main__":
-    print(get_xls("userCase.xlsx","login"))
+    print(getLines("userCase.xlsx", "login"))
     # set_visitor_token_to_config()

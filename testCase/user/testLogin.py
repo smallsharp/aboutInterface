@@ -4,7 +4,7 @@ from common import mUtils
 from common.mBaseCase import MyBaseCase
 
 # 0
-cases = mUtils.get_xls("userCase.xls", "login")  # lists contains many list
+cases = mUtils.getLines("userCase.xls", "login")  # lists contains many list
 
 # [['login', 'get', 18521035133.0, 123456.0, '0', '220119', 'account or password error!']]
 @paramunittest.parametrized(*cases)

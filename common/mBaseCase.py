@@ -21,6 +21,10 @@ class MyBaseCase(unittest.TestCase):
     mRequest = MyRequests()  # request instance
     logger = MyLog.getLog().getLogger()
 
+    def __init__(self, methodName='runTest', dconfig=None):
+        super(MyBaseCase, self).__init__(methodName)
+        self.hasSession = False
+
     # 1 接受请求参数，进行处理，使用参数化时，这个方法必须写
     def setParameters(self, *data):
         print("origin data:", data)
@@ -28,7 +32,6 @@ class MyBaseCase(unittest.TestCase):
         # # self.params = None
         # self.checkedArgs = self.checkNum(args)
         self.case, self.method, self.url, self.headers, self.params, self.codeExp, self.msgExp = data
-        self.hasSession = False
 
     def initSession(self):
 
