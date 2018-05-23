@@ -1,0 +1,6 @@
+2018-05-22 14:24:34,205 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-22 14:24:34,545 - DEBUG - https://m.taidu.com:443 "GET /memberSite/sso/loginJson?loginAccount=18521035133&password=111111&code=&rememberMe=1&clientType=H5&abbr=CN&clientVersion= HTTP/1.1" 200 None
+2018-05-22 14:24:34,549 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-22 14:24:34,718 - DEBUG - https://m.taidu.com:443 "GET /goodsSite/banner/bannerList HTTP/1.1" 200 None
+2018-05-22 14:24:34,723 - DEBUG - Starting new HTTPS connection (1): m.taidu.com
+2018-05-22 14:24:34,885 - DEBUG - https://m.taidu.com:443 "POST /orderPaySite/tude/order/queryOrderList HTTP/1.1" 200 0

@@ -42,7 +42,7 @@ if __name__ == '__main__':
     #     except Exception:
     #         print("第%d条,添加失败" % i)
 
-    str2 = 'pageSize=100&currPage=1&status=0%2C21%2C22&clientType=H5&abbr=CN&clientVersion=&sign=2E269FE54CF9E1C08396EA94F056DEE9'
+    str2 = 'abbr=CN&pageNo=1&clientType=H5&pageSize=200&clientVersion=&sign=FF1AEE6E87BF3B9132FE9621A1E1A941'
 
     d = str2dict(str2)
     print(d)
