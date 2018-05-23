@@ -12,11 +12,11 @@ interfaceIni = PATH('interface.ini')
 
 
 class MyIniParser:
+    """
+    解析.ini 文件
+    """
 
     def __init__(self, filePath):
-
-        if not str(filePath).endswith('.ini'):
-            pass
         with open(filePath, 'r'):
             self.parser = configparser.ConfigParser()
             self.parser.read(filePath)

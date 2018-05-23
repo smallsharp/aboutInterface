@@ -10,7 +10,9 @@ def login():
 
     try:
         startTime = datetime.datetime.now()
-        res = requests.post(url, json=params)
+        proxy = {'http': '33.33.33.10:8118'}
+        res = requests.post(url, json=params,proxies=proxy)
+        requests.adapters.DEFAULT_RETRIES = 500
         if res.status_code == 200:
             endTime = datetime.datetime.now()
             print((endTime - startTime).total_seconds())
@@ -23,7 +25,7 @@ def login():
             print(res.status_code)
 
     except Exception as e:
-        print('Error')
+        print('Error:',e)
 
 
 def userInfo(token, uid):

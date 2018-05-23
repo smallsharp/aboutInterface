@@ -33,20 +33,6 @@ class MyBaseCase(unittest.TestCase):
         # self.checkedArgs = self.checkNum(args)
         self.case, self.method, self.url, self.headers, self.params, self.codeExp, self.msgExp = data
 
-    def initSession(self):
-
-        if not self.hasSession:
-            print('init session ~')
-
-            login_url = "https://m.taidu.com/memberSite/sso/loginJson"
-            login_params = {'loginAccount': '18521035133', 'password': '111111', 'code': '', 'rememberMe': '1',
-                            'clientType': 'H5', 'abbr': 'CN', 'clientVersion': '',
-                            'sign': '87823FC7334C13955C8B451B48027954'}
-            session = requests.Session()
-            urllib3.disable_warnings()
-            session.get(url=login_url, params=login_params, verify=False)  # verify=False 关闭证书验证，但是仍然会报出证书警告
-            self.hasSession = True
-        return session
 
     def init(self):
         data = None
